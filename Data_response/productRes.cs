@@ -22,7 +22,7 @@ namespace intern_prj.Data_response
 
         public string? Size { get; set; }
 
-        public int? SoledCount { get; set; }
+        public int? SoldedCount { get; set; }
         public virtual ICollection<imageRes> Images { get; set; } = new List<imageRes>();
         public List<IFormFile>? imgs { get; set; }
     }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using intern_prj.Entities;
 
@@ -11,9 +12,11 @@ using intern_prj.Entities;
 namespace intern_prj.Migrations
 {
     [DbContext(typeof(DecorContext))]
-    partial class DecorContextModelSnapshot : ModelSnapshot
+    [Migration("20241008013614_changepropv111")]
+    partial class changepropv111
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

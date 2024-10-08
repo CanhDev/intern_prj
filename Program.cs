@@ -110,6 +110,8 @@ namespace intern_prj
             builder.Services.AddScoped<IItemCartRepo, ItemCartRepo>();
             builder.Services.AddScoped<IOderRepo, OrderRepo>();
             builder.Services.AddScoped<IFeedBackRepo, FeedBackRepo>();
+            builder.Services.AddScoped<IUserRepo, UserRepo>();
+            builder.Services.AddScoped<IDashboardRepo, DashboardRepo>();
             #endregion
 
             var app = builder.Build();

@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <Folder Include="GeneralModels\" />
-    <Folder Include="resource\" />
+    <Folder Include="resource\images\avatars\" />
   </ItemGroup>
 
 </Project>

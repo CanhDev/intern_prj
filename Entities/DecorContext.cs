@@ -202,9 +202,9 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
             entity.Property(e => e.Size)
                 .HasMaxLength(50)
                 .HasColumnName("size");
-            entity.Property(e => e.SoledCount)
+            entity.Property(e => e.SoldedCount)
                 .HasDefaultValue(0)
-                .HasColumnName("soledCount");
+                .HasColumnName("soldedCount");
             entity.Property(e => e.UpdateDate).HasColumnName("updateDate");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)

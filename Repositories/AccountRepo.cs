@@ -99,43 +99,16 @@ namespace intern_prj.Repositories
                         token = result,
                         userInfo = new UserReq
                         {
-                            fname = user.FirstName,
-                            lname = user.LastName,
+                            FirstName = user.FirstName,
+                            LastName = user.LastName,
                             Email = user.Email,
                             avatarUrl = user.avatarUrl,
-                            Password = ""
                         }
                     }
                 };
             }
         }
 
-        public async Task<Api_response> GetUserAsync(string email)
-        {
-            var user = await _userManager.FindByEmailAsync(email);
-            if(user == null )
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = "User doed not exist"
-                };
-            }
-            else
-            {
-                return new Api_response
-                {
-                    success = true,
-                    data = new UserReq
-                    {
-                        fname = user.FirstName,
-                        lname = user.LastName,
-                        Email = user.Email,
-                        Password = ""
-                    }
-                };
-            }
-        }
         public async Task<Api_response> RenewTokenAsync(TokenModel model)
         {
             return await _jwtHelper.RefreshToken(model);

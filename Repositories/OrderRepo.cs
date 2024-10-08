@@ -44,6 +44,21 @@ namespace intern_prj.Repositories
             {
                 var orderEntity = _mapper.Map<Order>(orderRes);
                 _context.Orders.Add(orderEntity);
+
+                var listOderDetail = orderEntity.OrderDetails?.ToList() ?? new List<OrderDetail>();
+                var productIds = listOderDetail.Select(od => od.ProductId).ToList();
+                var products = await _context.Products.Where(p => productIds.Contains(p.Id)).ToListAsync();
+
+                foreach (var orderDetail in listOderDetail)
+                {
+                    var productEntity = products.FirstOrDefault(p => p.Id == orderDetail.ProductId);
+                    if (productEntity != null)
+                    {
+                        productEntity.SoldedCount += orderDetail.UnitQuantity;
+                        productEntity.Quantity -= orderDetail.UnitQuantity.Value;
+                    }
+                }
+
                 await _context.SaveChangesAsync();
                 return new Api_response
                 {
@@ -51,25 +66,23 @@ namespace intern_prj.Repositories
                     data = _mapper.Map<OrderReq>(orderEntity)
                 };
             }
-            catch (DbUpdateException dbEx) 
+            catch (DbUpdateException dbEx)
             {
                 return new Api_response
                 {
                     success = false,
-                    message = dbEx.InnerException?.Message ?? dbEx.Message, 
+                    message = dbEx.InnerException?.Message ?? dbEx.Message,
                 };
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return new Api_response
                 {
                     success = false,
-                    message = ex.InnerException?.Message ?? ex.Message, 
+                    message = ex.InnerException?.Message ?? ex.Message,
                 };
             }
         }
-
-
         public async Task<Api_response> DeleteOrder(int orderId)
         {
             try

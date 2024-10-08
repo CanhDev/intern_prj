@@ -33,6 +33,11 @@ namespace intern_prj.Helper
             //FeedBack
             CreateMap<FeedBack, FeedBackRes>().ReverseMap();    
             CreateMap<FeedBack, FeedBackReq>().ReverseMap();
+
+            //User
+            CreateMap<UserRes, UserReq>().ReverseMap();
+            CreateMap<ApplicationUser, UserReq>().ReverseMap();
+            CreateMap<ApplicationUser, UserRes>().ReverseMap();
         }
     }
 }

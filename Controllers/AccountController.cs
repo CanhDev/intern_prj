@@ -69,26 +69,5 @@ namespace intern_prj.Controllers
                 });
             }
         }
-        [HttpPost("GetUser")]
-        public async Task<IActionResult> GetUser()
-        {
-            try
-            {
-                var Email = User.FindFirst(ClaimTypes.Email)?.Value;
-                return Email != null ? Ok(await _accountRepo.GetUserAsync(Email)) : Unauthorized(new Api_response
-                {
-                    success = false,
-                    message = "Unauthorized"
-                });
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(new Api_response
-                {
-                    success = false,
-                    message = ex.Message
-                });
-            }
-        }
     }
 }

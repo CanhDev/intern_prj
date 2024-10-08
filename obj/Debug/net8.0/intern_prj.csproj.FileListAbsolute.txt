@@ -261,3 +261,4 @@ C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\refint\in
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.pdb
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.genruntimeconfig.cache
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\ref\intern_prj.dll
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.sourcelink.json

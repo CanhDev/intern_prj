@@ -230,7 +230,7 @@
   {
     "ContainingType": "intern_prj.Controllers.ItemCartController",
     "Method": "DeleteItem",
-    "RelativePath": "api/ItemCart",
+    "RelativePath": "api/ItemCart/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -239,6 +239,11 @@
         "Name": "itemCartId",
         "Type": "System.Int32",
         "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -267,7 +272,7 @@
   {
     "ContainingType": "intern_prj.Controllers.ItemCartController",
     "Method": "GetItemsCartByCartId",
-    "RelativePath": "api/ItemCart/GetByCart{cartId}",
+    "RelativePath": "api/ItemCart/GetByCart/{cartId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

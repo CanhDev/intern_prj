@@ -16,7 +16,7 @@ namespace intern_prj.Controllers
             _itemCartRepo = itemCartRepo;
         }
 
-        [HttpGet("GetByCart{cartId}")]
+        [HttpGet("GetByCart/{cartId}")]
         public async Task<IActionResult> GetItemsCartByCartId(int cartId)
         {
             try
@@ -52,7 +52,7 @@ namespace intern_prj.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteItem(int itemCartId)
         {
             try

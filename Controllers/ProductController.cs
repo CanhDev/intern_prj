@@ -27,7 +27,7 @@ namespace intern_prj.Controllers
             _imageHepler = imageHepler;
         }
         [HttpGet]
-        public async Task<IActionResult> getProducts(int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 3)
+        public async Task<IActionResult> getProducts(int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 9)
         {
             try
             {

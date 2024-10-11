@@ -112,6 +112,14 @@ namespace intern_prj
             builder.Services.AddScoped<IFeedBackRepo, FeedBackRepo>();
             builder.Services.AddScoped<IUserRepo, UserRepo>();
             builder.Services.AddScoped<IDashboardRepo, DashboardRepo>();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:4200")
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader()
+                                      );
+            });
             #endregion
 
             var app = builder.Build();
@@ -134,7 +142,8 @@ namespace intern_prj
                     Path.Combine(app.Environment.ContentRootPath, "resource")),
                 RequestPath = "/resource"
             });
-                
+            app.UseCors("AllowSpecificOrigin");
+
             app.MapControllers();
 
             app.Run();

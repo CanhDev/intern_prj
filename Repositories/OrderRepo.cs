@@ -38,6 +38,40 @@ namespace intern_prj.Repositories
                 };
             }
         }
+        public async Task<Api_response> GetOder(int orderId)
+        {
+            try
+            {
+                var order = await _context.Orders
+                                .Include(o => o.OrderDetails)
+                                .Include(o => o.FeedBacks)
+                                .FirstOrDefaultAsync(o => o.Id == orderId);
+                if (order == null)
+                {
+                    return new Api_response
+                    {
+                        success = false,
+                        message = "order does not exist"
+                    };
+                }
+                else
+                {
+                    return new Api_response
+                    {
+                        success = true,
+                        data = _mapper.Map<OrderReq>(order)
+                    };
+                }
+            }
+            catch(Exception ex)
+            {
+                return new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                };
+            }
+        }
         public async Task<Api_response> CreateOrder(OrderRes orderRes)
         {
             try

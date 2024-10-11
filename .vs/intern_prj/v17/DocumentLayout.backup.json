@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\repositories\\dashboardrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:repositories\\dashboardrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\repositories\\interfaces\\idashboardrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:repositories\\interfaces\\idashboardrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\data_request\\productreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:data_request\\productreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\data_request\\userreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:data_request\\userreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCAAAAATAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T02:30:01.783Z",
+              "WhenOpened": "2024-10-10T09:23:14.845Z",
               "EditorCaption": ""
             },
             {
@@ -49,36 +61,69 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAQwHEAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T02:26:42.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T09:13:18.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DashboardRepo.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\DashboardRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\DashboardRepo.cs",
-              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\DashboardRepo.cs",
-              "RelativeToolTip": "Repositories\\DashboardRepo.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAcwDEAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T01:59:10.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:07:11.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "productReq.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Data_request\\productReq.cs",
+              "RelativeDocumentMoniker": "Data_request\\productReq.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Data_request\\productReq.cs",
+              "RelativeToolTip": "Data_request\\productReq.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T03:13:24.648Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IDashboardRepo.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\interfaces\\IDashboardRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\interfaces\\IDashboardRepo.cs",
-              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\interfaces\\IDashboardRepo.cs",
-              "RelativeToolTip": "Repositories\\interfaces\\IDashboardRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAABoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T01:53:45.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T16:40:58.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserReq.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Data_request\\UserReq.cs",
+              "RelativeDocumentMoniker": "Data_request\\UserReq.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Data_request\\UserReq.cs",
+              "RelativeToolTip": "Data_request\\UserReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T16:40:53.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T10:40:31.371Z"
             }
           ]
         }

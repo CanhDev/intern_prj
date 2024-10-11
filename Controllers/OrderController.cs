@@ -34,6 +34,24 @@ namespace intern_prj.Controllers
                 });
             }
         }
+
+        [HttpGet("GetSingleOrder/{orderId}")]
+        public async Task<IActionResult> GetOder(int orderId)
+        {
+            try
+            {
+                var res = await _oderRepo.GetOder(orderId);
+                return Ok(res);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                });
+            }
+        }
         [HttpPost]
         public async Task<IActionResult> CreateOrder(OrderRes orderRes)
         {

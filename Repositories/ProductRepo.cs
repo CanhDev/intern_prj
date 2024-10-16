@@ -183,13 +183,13 @@ namespace intern_prj.Repositories
         //sort by data & price
         public IQueryable<Product> handleSort(IQueryable<Product> products, string? sortString)
         {
-            products = products.OrderBy(p => p.CreateDate);
+            products = products.OrderByDescending(p => p.CreateDate);
             if (!string.IsNullOrEmpty(sortString))
             {
                 switch(sortString)
                 {
                     case "date_desc":
-                        products = products.OrderBy(p => p.CreateDate); break;
+                        products = products.OrderByDescending(p => p.CreateDate); break;
                     case "price_asc":
                         products = products.OrderBy(p => p.Price); break;
                     case "price_desc":

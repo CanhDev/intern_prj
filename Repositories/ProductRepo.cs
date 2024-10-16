@@ -94,6 +94,7 @@ namespace intern_prj.Repositories
             }
 
             var newProduct = _mapper.Map<Product>(productReqest);
+            newProduct.CreateDate = DateTime.Now;
             await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();
             //

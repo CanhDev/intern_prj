@@ -23,14 +23,20 @@ namespace intern_prj.Repositories
         {
             try
             {
-                var items = await _context.ItemCarts.Where(i => i.CartId == cartId).ToListAsync();
+                var items = await _context.ItemCarts
+                    .Where(i => i.CartId == cartId)
+                    .Include(i => i.Product)               
+                    .ThenInclude(p => p.Images)            
+                    .ToListAsync();
+
                 return new Api_response
                 {
                     success = true,
-                    data = items
+                    data = _mapper.Map<List<ItemCartReq>>(items)
                 };
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 return new Api_response
                 {
                     success = false,
@@ -38,6 +44,7 @@ namespace intern_prj.Repositories
                 };
             }
         }
+
         public async Task<Api_response> AddItemCart(ItemCartRes itemCartRes)
         {
             try
@@ -45,7 +52,8 @@ namespace intern_prj.Repositories
                 var item = await _context.ItemCarts.FirstOrDefaultAsync(i => i.CartId == itemCartRes.CartId
                                                                         && i.ProductId == itemCartRes.ProductId);
                 var product = await _context.Products.FindAsync(itemCartRes.ProductId);
-                if(product != null)
+
+                if (product != null)
                 {
                     if (item == null)
                     {
@@ -56,9 +64,13 @@ namespace intern_prj.Repositories
                     else
                     {
                         item.Quantity += itemCartRes.Quantity;
+                        item.Price += itemCartRes.Price;
                     }
+
                     product.Quantity -= itemCartRes.Quantity.Value;
+
                     await _context.SaveChangesAsync();
+
                     return new Api_response
                     {
                         success = true,
@@ -70,19 +82,23 @@ namespace intern_prj.Repositories
                     return new Api_response
                     {
                         success = false,
-                        message = "product does not exist",
+                        message = "Product does not exist",
                     };
                 }
             }
             catch (Exception ex)
             {
+                // Lấy thông tin chi tiết từ inner exception nếu có
+                string errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+
                 return new Api_response
                 {
                     success = false,
-                    message = ex.Message,
+                    message = errorMessage,
                 };
             }
         }
+
 
         public async Task<Api_response> DeleteItemCart(int itemCartId)
         {
@@ -117,10 +133,11 @@ namespace intern_prj.Repositories
         {
             try
             {
-                var item = await _context.ItemCarts.FindAsync(id);
+                var item = await _context.ItemCarts.Include(i => i.Product).ThenInclude(i => i.Images).FirstOrDefaultAsync(i => i.Id == id);
                 if(item != null)
                 {
-                    item.Quantity += itemCartRes.Quantity;
+                    item.Quantity = itemCartRes.Quantity;
+                    item.Price = itemCartRes.Price;
                     await _context.SaveChangesAsync();
                     return new Api_response
                     {

@@ -56,6 +56,7 @@ namespace intern_prj
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero,
                     ValidAudience = builder.Configuration["JWT:ValidAudience"],
                     ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
                     IssuerSigningKey = new SymmetricSecurityKey
@@ -132,10 +133,11 @@ namespace intern_prj
             }
 
             app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
             app.UseStaticFiles();
+            app.UseCors("AllowSpecificOrigin");
+
+            app.UseAuthentication(); 
+            app.UseAuthorization();
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(

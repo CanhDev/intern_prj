@@ -74,11 +74,11 @@ namespace intern_prj.Controllers
         }
         [Authorize(Roles = AppRole.Admin)]
         [HttpPut("Admin/User/{id}")]
-        public async Task<IActionResult> UpdateUserAsync_Admin(UserRes userRes, string id, string newPassword)
+        public async Task<IActionResult> UpdateUserAsync_Admin([FromForm] UserRes userRes, string id)
         {
             try
             {
-                var res = await _userRepo.UpdateUserAsync_Admin(userRes, id, newPassword);
+                var res = await _userRepo.UpdateUserAsync_Admin(userRes, id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -109,8 +109,9 @@ namespace intern_prj.Controllers
             }
         }
 
-        [Authorize]
+        
         [HttpGet("Client/User")]
+        [Authorize]
         public async Task<IActionResult> GetUserAsync_Client()
         {
             try
@@ -165,7 +166,7 @@ namespace intern_prj.Controllers
         }
         [Authorize]
         [HttpPut("Client/User/ChangePassword")]
-        public async Task<IActionResult> ChangePassword_Client(string oldPassword, string newPassword)
+        public async Task<IActionResult> ChangePassword_Client([FromBody] ChangePasswordModel model)
         {
             try
             {
@@ -178,7 +179,7 @@ namespace intern_prj.Controllers
                         message = "Unauthorized"
                     });
                 }
-                var res = await _userRepo.ChangePassword_Client(id, oldPassword, newPassword);   
+                var res = await _userRepo.ChangePassword_Client(id, model.OldPassword, model.NewPassword);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -189,6 +190,11 @@ namespace intern_prj.Controllers
                     message = ex.Message,
                 });
             }
+        }
+        public class ChangePasswordModel
+        {
+            public string OldPassword { get; set; }
+            public string NewPassword { get; set; }
         }
     }
 }

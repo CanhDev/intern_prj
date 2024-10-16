@@ -88,6 +88,10 @@ namespace intern_prj.Repositories
                     var productEntity = products.FirstOrDefault(p => p.Id == orderDetail.ProductId);
                     if (productEntity != null)
                     {
+                        if(productEntity.SoldedCount == null)
+                        {
+                            productEntity.SoldedCount = 0;
+                        }
                         productEntity.SoldedCount += orderDetail.UnitQuantity;
                         productEntity.Quantity -= orderDetail.UnitQuantity.Value;
                     }
@@ -151,14 +155,15 @@ namespace intern_prj.Repositories
             }
         }
 
-        public async Task<Api_response> UpdateStatus(int id, string status)
+        public async Task<Api_response> UpdateStatus(int id, string StatusPayment, string StatusShipping)
         {
             try
             {
                 var order = await _context.Orders.FindAsync(id);
                 if (order != null)
                 {
-                    order.Status = status;
+                    order.StatusShipping = StatusShipping;
+                    order.StatusPayment = StatusPayment;
                     await _context.SaveChangesAsync();
                     return new Api_response
                     {
@@ -172,6 +177,28 @@ namespace intern_prj.Repositories
                         success = false,
                     };
                 }
+            }
+            catch(Exception ex)
+            {
+                return new Api_response
+                {
+                    success = false,
+                    message = ex.Message
+                };
+            }
+        }
+
+        public async Task<Api_response> GetOrdersDetail(int orderId)
+        {
+            try
+            {
+                var ordersDetail = await _context.OrderDetails.Include(od => od.Product.Images)
+                    .Where(od => od.OrderId == orderId).ToListAsync();
+                return new Api_response
+                {
+                    success = true,
+                    data = _mapper.Map<List<OrderDetailReq>>(ordersDetail)
+                };
             }
             catch(Exception ex)
             {

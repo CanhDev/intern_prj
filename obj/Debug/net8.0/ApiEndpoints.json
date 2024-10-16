@@ -48,6 +48,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "intern_prj.Controllers.CartController",
+    "Method": "getCart",
+    "RelativePath": "api/Cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "intern_prj.Controllers.CategoryController",
     "Method": "getCategories",
     "RelativePath": "api/Category",
@@ -66,9 +76,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "categoryRes",
-        "Type": "intern_prj.Data_response.CategoryRes",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "imageUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -103,9 +128,24 @@
         "IsRequired": true
       },
       {
-        "Name": "categoryRes",
-        "Type": "intern_prj.Data_response.CategoryRes",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "imageUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -236,13 +276,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "itemCartId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "id",
-        "Type": "",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -272,13 +307,13 @@
   {
     "ContainingType": "intern_prj.Controllers.ItemCartController",
     "Method": "GetItemsCartByCartId",
-    "RelativePath": "api/ItemCart/GetByCart/{cartId}",
+    "RelativePath": "api/ItemCart/GetByCart/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cartId",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -331,7 +366,12 @@
         "IsRequired": true
       },
       {
-        "Name": "status",
+        "Name": "StatusPayment",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StatusShipping",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -349,6 +389,38 @@
       {
         "Name": "userId",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.Controllers.OrderController",
+    "Method": "GetOrdersDetail",
+    "RelativePath": "api/Order/GetOrderDetail/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.Controllers.OrderController",
+    "Method": "GetOder",
+    "RelativePath": "api/Order/GetSingleOrder/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -449,8 +521,8 @@
         "IsRequired": false
       },
       {
-        "Name": "Images",
-        "Type": "System.Collections.Generic.ICollection\u00601[[intern_prj.Data_response.imageRes, intern_prj, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Name": "ImageUrls",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -541,8 +613,8 @@
         "IsRequired": false
       },
       {
-        "Name": "Images",
-        "Type": "System.Collections.Generic.ICollection\u00601[[intern_prj.Data_response.imageRes, intern_prj, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Name": "ImageUrls",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -598,6 +670,16 @@
         "IsRequired": false
       },
       {
+        "Name": "PhoneNum",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Email",
         "Type": "System.String",
         "IsRequired": false
@@ -608,12 +690,12 @@
         "IsRequired": false
       },
       {
-        "Name": "avatarUrl",
+        "Name": "AvatarUrl",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "avatarImage",
+        "Name": "AvatarImage",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }
@@ -655,6 +737,16 @@
         "IsRequired": false
       },
       {
+        "Name": "PhoneNum",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Email",
         "Type": "System.String",
         "IsRequired": false
@@ -665,12 +757,12 @@
         "IsRequired": false
       },
       {
-        "Name": "avatarUrl",
+        "Name": "AvatarUrl",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "avatarImage",
+        "Name": "AvatarImage",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       },
@@ -678,11 +770,6 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
-      },
-      {
-        "Name": "newPassword",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -732,6 +819,16 @@
         "IsRequired": false
       },
       {
+        "Name": "PhoneNum",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "Email",
         "Type": "System.String",
         "IsRequired": false
@@ -742,12 +839,12 @@
         "IsRequired": false
       },
       {
-        "Name": "avatarUrl",
+        "Name": "AvatarUrl",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "avatarImage",
+        "Name": "AvatarImage",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }
@@ -763,14 +860,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "oldPassword",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "newPassword",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "model",
+        "Type": "intern_prj.Controllers.UserController\u002BChangePasswordModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

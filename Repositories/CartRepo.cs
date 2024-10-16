@@ -1,4 +1,6 @@
-﻿using intern_prj.Entities;
+﻿using AutoMapper;
+using intern_prj.Data_request;
+using intern_prj.Entities;
 using intern_prj.Helper;
 using intern_prj.Repositories.interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -9,10 +11,36 @@ namespace intern_prj.Repositories
     public class CartRepo : ICartRepo
     {
         private readonly DecorContext _context;
+        private readonly IMapper _mapper;
 
-        public CartRepo(DecorContext context)
+        public CartRepo(DecorContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
+        }
+        public async Task<Api_response> GetCartAsync(string userid)
+        {
+            try
+            {
+                var cart = await _context.Carts
+                    .Include(c => c.ItemCarts)
+                    .ThenInclude(ic => ic.Product)
+                    .ThenInclude(p => p.Images)
+                    .FirstOrDefaultAsync(c => c.UserId == userid);
+                return new Api_response
+                {
+                    success = true,
+                    data = _mapper.Map<CartReq>(cart)
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                };
+            }
         }
         public async Task<Api_response> InitCart(string userId)
         {

@@ -51,10 +51,13 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
             entity.Property(e => e.ProductTypeQuan).HasColumnName("productTypeQuan");
             entity.Property(e => e.UserId).HasColumnName("userID");
 
-            entity.HasOne(d => d.User).WithOne(p => p.Cart)
+            entity.HasOne(d => d.User)
+                .WithOne(p => p.Cart)
                 .HasForeignKey<Cart>(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade) // Thiết lập xóa cascade
                 .HasConstraintName("FK__Cart__userID__4BAC3F29");
         });
+
 
         modelBuilder.Entity<Category>(entity =>
         {
@@ -111,7 +114,7 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
 
             entity.ToTable("ItemCart");
 
-            entity.HasIndex(e => e.ProductId, "UQ__ItemCart__2D10D14BDBBF2276").IsUnique();
+            entity.HasIndex(e => e.ProductId, "UQ__ItemCart__2D10D14BDBBF2276");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CartId).HasColumnName("cartID");
@@ -142,10 +145,14 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
             entity.Property(e => e.ShippingAddress)
                 .HasMaxLength(255)
                 .HasColumnName("shippingAddress");
-            entity.Property(e => e.Status)
+            entity.Property(e => e.StatusPayment)
                 .HasMaxLength(50)
-                .HasDefaultValue("pending")
-                .HasColumnName("status");
+                .HasDefaultValue("Đang chờ")
+                .HasColumnName("statusPayment");
+            entity.Property(e => e.StatusShipping)
+                .HasMaxLength(50)
+                .HasDefaultValue("Chưa thanh toán")
+                .HasColumnName("statusShipping");
             entity.Property(e => e.TotalAmount).HasColumnName("totalAmount");
             entity.Property(e => e.UserId).HasColumnName("userID");
 
@@ -164,7 +171,7 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
 
             entity.ToTable("OrderDetail");
 
-            entity.HasIndex(e => new { e.OrderId, e.ProductId }).IsUnique();
+            entity.HasIndex(e => new { e.OrderId, e.ProductId });
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.OrderId).HasColumnName("orderID");

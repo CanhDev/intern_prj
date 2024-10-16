@@ -85,6 +85,7 @@ namespace intern_prj.Helper.jwtSerivce
                 ValidateIssuer = true,
                 ValidateAudience = true,
                 ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
                 ValidAudience = _configuration["JWT:ValidAudience"],
                 ValidIssuer = _configuration["JWT:ValidIssuer"],
                 IssuerSigningKey = authenKey,
@@ -107,14 +108,14 @@ namespace intern_prj.Helper.jwtSerivce
                     };
                 }
                 //2. check accessToken expire
-                var utcExpireDate = long.Parse(tokenInverification.Claims
-                    .FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Exp).Value);
-                var expireDate = ConvertUnixTimeToDateTime(utcExpireDate);
-                if (expireDate > DateTime.UtcNow) return new Api_response
-                {
-                    success = false,
-                    message = "AccessToken has not yet expired"
-                };
+                //var utcExpireDate = long.Parse(tokenInverification.Claims
+                //    .FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Exp).Value);
+                //var expireDate = ConvertUnixTimeToDateTime(utcExpireDate);
+                //if (expireDate > DateTime.UtcNow) return new Api_response
+                //{
+                //    success = false,
+                //    message = "AccessToken has not yet expired"
+                //};
                 //3. check refreshToken exist in DB
                 var storedToken = await _context.RefreshTokenEntities.FirstOrDefaultAsync(
                     x => x.Token == model.refreshToken);

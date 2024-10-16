@@ -1,8 +1,10 @@
 ﻿using intern_prj.Data_request;
 using intern_prj.Data_response;
 using intern_prj.Helper;
+using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,8 +54,9 @@ namespace intern_prj.Controllers
                 });
             }
         }
-        [HttpPost]  
-        public async Task<IActionResult> Add(CategoryRes categoryRes)
+        [HttpPost]
+        [Authorize(Roles = AppRole.Admin)]
+        public async Task<IActionResult> Add([FromForm]CategoryRes categoryRes)
         {
             try
             {
@@ -71,7 +74,8 @@ namespace intern_prj.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Edit(int id, CategoryRes categoryRes)
+        [Authorize(Roles = AppRole.Admin)]
+        public async Task<IActionResult> Edit( int id, [FromForm] CategoryRes categoryRes)
         {
             try
             {
@@ -89,6 +93,7 @@ namespace intern_prj.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = AppRole.Admin)]
         public async Task<IActionResult> Delete(int id)
         {
             try

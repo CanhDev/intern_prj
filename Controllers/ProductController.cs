@@ -4,7 +4,9 @@ using intern_prj.Data_request;
 using intern_prj.Data_response;
 using intern_prj.Entities;
 using intern_prj.Helper;
+using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories.interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
@@ -62,6 +64,7 @@ namespace intern_prj.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AppRole.Admin)]
         public async Task<IActionResult> Add([FromForm] productRes productRes) 
         {
             try
@@ -81,6 +84,7 @@ namespace intern_prj.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = AppRole.Admin)]
         public async Task<IActionResult> Edit(int id, [FromForm] productRes productRes)
         {
             try
@@ -100,6 +104,7 @@ namespace intern_prj.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = AppRole.Admin)]
         public async Task<IActionResult> Delete(int id)
         {
             try

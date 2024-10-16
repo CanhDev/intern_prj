@@ -5,5 +5,7 @@
         public string Name { get; set; } = null!;
 
         public string? Description { get; set; }
+        public string? imageUrl { get; set; }
+        public IFormFile? image { get; set; }
     }
 }

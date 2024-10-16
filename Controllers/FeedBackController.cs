@@ -2,6 +2,7 @@
 using intern_prj.Helper;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace intern_prj.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FeedBackController : ControllerBase
     {
         private readonly IFeedBackRepo _feedBackRepo;

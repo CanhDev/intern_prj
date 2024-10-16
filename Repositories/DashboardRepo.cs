@@ -34,16 +34,18 @@ namespace intern_prj.Repositories
                                 OriginalPrice = p.OriginalPrice
                             };
 
-                if (!string.IsNullOrEmpty(startDate) && DateTime.TryParseExact(startDate, "dd/MM/yyyy",
+                // Định dạng lại ngày tháng
+                if (!string.IsNullOrEmpty(startDate) && DateTime.TryParseExact(startDate, "yyyy-MM-dd",
                     null, System.Globalization.DateTimeStyles.None, out DateTime start))
                 {
                     query = query.Where(x => x.CreatedDate >= start);
                 }
 
-                if (!string.IsNullOrEmpty(endDate) && DateTime.TryParseExact(endDate, "dd/MM/yyyy",
+                if (!string.IsNullOrEmpty(endDate) && DateTime.TryParseExact(endDate, "yyyy-MM-dd",
                     null, System.Globalization.DateTimeStyles.None, out DateTime end))
                 {
-                    query = query.Where(x => x.CreatedDate < end);
+                    // Thay đổi cách so sánh ngày kết thúc để bao gồm cả ngày cuối cùng
+                    query = query.Where(x => x.CreatedDate < end.AddDays(1));
                 }
 
                 var result = await query
@@ -79,6 +81,7 @@ namespace intern_prj.Repositories
                 };
             }
         }
+
 
         public async Task<Api_response> GetTopSelling(int count = 5)
         {

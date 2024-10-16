@@ -163,6 +163,9 @@ namespace intern_prj.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -195,6 +198,9 @@ namespace intern_prj.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNum")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
@@ -278,6 +284,9 @@ namespace intern_prj.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("name");
+
+                    b.Property<string>("imageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id")
                         .HasName("PK__Category__3213E83F75780C5D");
@@ -373,9 +382,7 @@ namespace intern_prj.Migrations
 
                     b.HasIndex("CartId");
 
-                    b.HasIndex(new[] { "ProductId" }, "UQ__ItemCart__2D10D14BDBBF2276")
-                        .IsUnique()
-                        .HasFilter("[productID] IS NOT NULL");
+                    b.HasIndex(new[] { "ProductId" }, "UQ__ItemCart__2D10D14BDBBF2276");
 
                     b.ToTable("ItemCart", (string)null);
                 });
@@ -402,17 +409,36 @@ namespace intern_prj.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("paymentMethod");
 
+                    b.Property<string>("RecipientAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RecipientEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RecipientName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RecipientPhone")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ShippingAddress")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("shippingAddress");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("StatusPayment")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
-                        .HasDefaultValue("pending")
-                        .HasColumnName("status");
+                        .HasDefaultValue("Đang chờ")
+                        .HasColumnName("statusPayment");
+
+                    b.Property<string>("StatusShipping")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Chưa thanh toán")
+                        .HasColumnName("statusShipping");
 
                     b.Property<decimal?>("TotalAmount")
                         .HasColumnType("decimal(18,2)")
@@ -458,8 +484,7 @@ namespace intern_prj.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("OrderId", "ProductId")
-                        .IsUnique();
+                    b.HasIndex("OrderId", "ProductId");
 
                     b.ToTable("OrderDetail", (string)null);
                 });
@@ -618,6 +643,7 @@ namespace intern_prj.Migrations
                     b.HasOne("intern_prj.Entities.ApplicationUser", "User")
                         .WithOne("Cart")
                         .HasForeignKey("intern_prj.Entities.Cart", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .HasConstraintName("FK__Cart__userID__4BAC3F29");
 
                     b.Navigation("User");

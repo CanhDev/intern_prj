@@ -8,10 +8,9 @@
 
         public int? CartId { get; set; }
 
-        public int? OrderDetailId { get; set; }
-
         public int? Quantity { get; set; }
 
         public decimal Price { get; set; }
+        public productReq? Product { get; set; }
     }
 }

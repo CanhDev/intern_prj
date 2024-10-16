@@ -18,8 +18,9 @@ namespace intern_prj.Repositories
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ImageHepler _imageHepler;
+        private readonly ICartRepo _cartRepo;
 
-        public UserRepo(DecorContext context, IMapper mapper,
+        public UserRepo(DecorContext context, IMapper mapper, ICartRepo cartRepo,
             UserManager<ApplicationUser> userManager
            ,RoleManager<IdentityRole> roleManager
            ,ImageHepler imageHepler)
@@ -29,6 +30,7 @@ namespace intern_prj.Repositories
             _userManager = userManager;
             _roleManager = roleManager;
             _imageHepler = imageHepler;
+            _cartRepo = cartRepo;
         }
         public async Task<Api_response> GetUsers_Admin()
         {
@@ -88,15 +90,18 @@ namespace intern_prj.Repositories
             try
             {
                 var user = _mapper.Map<ApplicationUser>(userRes);
-                if(userRes.avatarImage != null)
+                user.UserName = userRes.Email;
+                if (userRes.AvatarImage != null)
                 {
-                    var imageUrl = await _imageHepler.saveImage(userRes.avatarImage, "avatars");
+                    var imageUrl = await _imageHepler.saveImage(userRes.AvatarImage, "avatars");
                     user.avatarUrl = imageUrl;
                 }
                 var res = await _userManager.CreateAsync(user, userRes.Password);
                 if (res.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, AppRole.Admin);
+                    await _userManager.AddToRoleAsync(user, AppRole.Customer);
+                    await _cartRepo.InitCart(user.Id);
+
                     return new Api_response
                     {
                         success = true,
@@ -105,24 +110,25 @@ namespace intern_prj.Repositories
                 }
                 else
                 {
+                    var errors = string.Join(", ", res.Errors.Select(e => e.Description));
                     return new Api_response
                     {
                         success = false,
-                        message = "Create User fail"
+                        message = $"Create User failed: {errors}"
                     };
                 }
-                
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new Api_response
                 {
                     success = false,
-                    message = ex.Message,
+                    message = ex.Message
                 };
             }
         }
-        public async Task<Api_response> UpdateUserAsync_Admin(UserRes userRes, string id, string? newPassword)
+
+        public async Task<Api_response> UpdateUserAsync_Admin(UserRes userRes, string id)
         {
             try
             {
@@ -130,32 +136,18 @@ namespace intern_prj.Repositories
                 if (user != null)
                 {
                     _mapper.Map(userRes, user);
-                    if (userRes.avatarImage != null)
+                    if (userRes.AvatarImage != null)
                     {
-                        var imageUrl = await _imageHepler.saveImage(userRes.avatarImage, "avatars");
+                        var imageUrl = await _imageHepler.saveImage(userRes.AvatarImage, "avatars");
                         user.avatarUrl = imageUrl;
                     }
                     var updateResult = await _userManager.UpdateAsync(user);
-                    if (!updateResult.Succeeded)
-                    {
-                        if (!string.IsNullOrEmpty(newPassword))
-                        {
-                            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-                            var res = await _userManager.ResetPasswordAsync(user, token, newPassword);
-                            if (!res.Succeeded)
-                            {
-                                return new Api_response
-                                {
-                                    success = false,
-                                    message = string.Join("; ", res.Errors.Select(e => e.Description))
-                                };
-                            }
-                        }
-                    }
+                    
                     return new Api_response
                     {
                         success = true,
                         message = "User updated successfully.",
+                        data = _mapper.Map<UserReq>(user)
                     };
                 }
                 else
@@ -249,9 +241,9 @@ namespace intern_prj.Repositories
                 if(user != null)
                 {
                     _mapper.Map(userRes, user);
-                    if (userRes.avatarImage != null)
+                    if (userRes.AvatarImage != null)
                     {
-                        var imageUrl = await _imageHepler.saveImage(userRes.avatarImage, "avatars");
+                        var imageUrl = await _imageHepler.saveImage(userRes.AvatarImage, "avatars");
                         user.avatarUrl = imageUrl;
                     }
                     var updateResult = await _userManager.UpdateAsync(user);
@@ -260,7 +252,7 @@ namespace intern_prj.Repositories
                         return new Api_response
                         {
                             success = false,
-                            message = "update user fail"
+                            message = "Update user failed. " + string.Join(", ", updateResult.Errors.Select(e => e.Description))
                         };
                     }
                     return new Api_response
@@ -279,12 +271,12 @@ namespace intern_prj.Repositories
                     };
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new Api_response
                 {
                     success = false,
-                    message = ex.Message,
+                    message = $"An error occurred: {ex.Message}" + (ex.InnerException != null ? $" Inner Exception: {ex.InnerException.Message}" : string.Empty),
                 };
             }
         }
@@ -302,7 +294,8 @@ namespace intern_prj.Repositories
                         return new Api_response
                         {
                             success = true,
-                            message = "Change Password successful"
+                            message = "Change Password successful",
+                            data = _mapper.Map<UserReq>(user)
                         };
                     }
                     else

@@ -8,7 +8,7 @@ namespace intern_prj.Repositories.interfaces
         public Task<Api_response> GetUsers_Admin();
         public Task<Api_response> GetUser_Admin(string id);
         public Task<Api_response> CreateUserAsync_Admin(UserRes userRes);
-        public Task<Api_response> UpdateUserAsync_Admin(UserRes userRes, string id, string newPassword);
+        public Task<Api_response> UpdateUserAsync_Admin(UserRes userRes, string id);
         public Task<Api_response> DeleteUserAsync_Admin(string id);
         public Task<Api_response> GetUserAsync_Client(string id);
         public Task<Api_response> UpdateUserAsync_Client(UserRes userRes, string id);

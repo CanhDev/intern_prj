@@ -10,9 +10,11 @@ namespace intern_prj.Helper
         public Mapper() {
             //productMap
             CreateMap<Product, productReq>().ReverseMap();
+            CreateMap<Product, productRes>().ReverseMap();
             CreateMap<productRes, productReq>().ReverseMap();
             CreateMap<Image, imageReq>().ReverseMap();
             CreateMap<imageReq, imageRes>().ReverseMap();
+            CreateMap<Image, imageRes>().ReverseMap();
 
             //CategoryMap
             CreateMap<Category, CategoryReq>().ReverseMap();
@@ -38,6 +40,9 @@ namespace intern_prj.Helper
             CreateMap<UserRes, UserReq>().ReverseMap();
             CreateMap<ApplicationUser, UserReq>().ReverseMap();
             CreateMap<ApplicationUser, UserRes>().ReverseMap();
+            
+            //Cart
+            CreateMap<Cart, CartReq>().ReverseMap();
         }
     }
 }

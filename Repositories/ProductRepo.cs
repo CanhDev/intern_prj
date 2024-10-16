@@ -24,7 +24,11 @@ namespace intern_prj.Repositories
         public async Task<Api_response> GetProductsAsync(int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 3)
         {
             // query
-            IQueryable<Product> products = _context.Products.Include(p => p.Images);
+            IQueryable<Product> products = _context.Products
+            .Include(p => p.Images)
+            .Include(p => p.Category);
+
+            int total = products.Count();
 
             if (typeId != null)
             {
@@ -43,7 +47,11 @@ namespace intern_prj.Repositories
             return new Api_response
             {
                 success = true,
-                data = productsRequest
+                data = new
+                {
+                    totalProduct = total,
+                    products = productsRequest
+                }
             };
         }
 
@@ -99,33 +107,37 @@ namespace intern_prj.Repositories
         }
         public async Task<Api_response> EditProductAsync(productRes productRes, int id)
         {
-
-            var productRequest = _mapper.Map<productReq>(productRes);
+            var editProduct = await _context.Products.Include(p => p.Images).FirstOrDefaultAsync(p => p.Id == id);
             //
-            if (productRes.imgs != null && productRes.imgs.Count > 0)
-            {
-                foreach (var img in productRes.imgs)
-                {
-                    var imgFileName = await _imageHepler.saveImage(img, "products");
-                    if (imgFileName != null)
-                    {
-                        productRequest.Images.Add(new imageReq { ImageUrl = imgFileName });
-                    }
-                }
-            }
-            //
-            var editProduct = await _context.Products.Include(p => p.Images).FirstOrDefaultAsync(p => p.Id == id);  
             if(editProduct != null)
             {
-                _mapper.Map(productRequest, editProduct);
-                editProduct.Id = id;
+                 _mapper.Map(productRes, editProduct);
                 //
-                await _context.SaveChangesAsync();
-                var returnProduct = _mapper.Map<productReq>(editProduct);
+                if (productRes.ImageUrls.Count > 0)
+                {
+                    editProduct.Images.Clear();
+                    foreach (var img in productRes.ImageUrls)
+                    {
+                        editProduct.Images.Add(new Image {ProductId = id, ImageUrl = img });
+                    }
+                }
+                if (productRes.imgs != null && productRes.imgs.Count > 0)
+                {
+                    foreach (var img in productRes.imgs)
+                    {
+                        var imgFileName = await _imageHepler.saveImage(img, "products");
+                        if (imgFileName != null)
+                        {
+                            editProduct.Images.Add(new Image { ProductId = id, ImageUrl = imgFileName });
+                        }
+                    }
+                }
+                //
+               await _context.SaveChangesAsync();
                 return new Api_response
                 {
                     success = true,
-                    data = returnProduct
+                    data = _mapper.Map<productReq>(editProduct)
                 };
             }
             else
@@ -171,7 +183,7 @@ namespace intern_prj.Repositories
         //sort by data & price
         public IQueryable<Product> handleSort(IQueryable<Product> products, string? sortString)
         {
-            products = products.OrderByDescending(p => p.CreateDate);
+            products = products.OrderBy(p => p.CreateDate);
             if (!string.IsNullOrEmpty(sortString))
             {
                 switch(sortString)

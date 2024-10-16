@@ -38,6 +38,18 @@ namespace intern_prj.Repositories
         {
             var request = _httpContextAccessor.HttpContext?.Request;
             var defaultImageUrl = $"{request.Scheme}://{request.Host}/resource/images/default/no_avatar.png";
+
+            // Kiểm tra xem email đã tồn tại hay chưa
+            var existingUser = await _userManager.FindByEmailAsync(model.Email);
+            if (existingUser != null)
+            {
+                return new Api_response
+                {
+                    success = false,
+                    message = "Email đã tồn tại. Vui lòng sử dụng email khác."
+                };
+            }
+
             var userAccount = new ApplicationUser
             {
                 FirstName = model.fname,
@@ -46,6 +58,7 @@ namespace intern_prj.Repositories
                 UserName = model.Email,
                 avatarUrl = defaultImageUrl
             };
+
             var result = await _userManager.CreateAsync(userAccount, model.Password);
             if (result.Succeeded)
             {
@@ -65,16 +78,16 @@ namespace intern_prj.Repositories
                 {
                     await _userManager.AddToRoleAsync(userAccount, AppRole.Customer);
                 }
-                //
+
                 await _cartRepo.InitCart(userAccount.Id);
             }
             return new Api_response
             {
                 success = result.Succeeded,
-                message = result.Succeeded ? "SignUp successfull" : "Signup fail"
+                message = result.Succeeded ? "SignUp successful" : "SignUp failed"
             };
-            
         }
+
         public async Task<Api_response> LoginAsync(LoginRes model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
@@ -99,10 +112,13 @@ namespace intern_prj.Repositories
                         token = result,
                         userInfo = new UserReq
                         {
+                            Id = user.Id,
                             FirstName = user.FirstName,
                             LastName = user.LastName,
                             Email = user.Email,
                             avatarUrl = user.avatarUrl,
+                            PhoneNum = user.PhoneNum,
+                            Address = user.Address,
                         }
                     }
                 };

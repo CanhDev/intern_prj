@@ -25,6 +25,7 @@ namespace intern_prj.Data_request
         public string? Size { get; set; }
 
         public int? SoldedCount { get; set; }
+        public virtual CategoryReq? Category { get; set; }
         public virtual ICollection<imageReq> Images { get; set; } = new List<imageReq>();
     }
 }

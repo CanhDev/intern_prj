@@ -12,10 +12,12 @@ namespace intern_prj.Repositories
     {
         private readonly DecorContext _context;
         private readonly IMapper _mapper;
+        private readonly ImageHepler _imageHepler;
 
-        public CategoryRepo(DecorContext context, IMapper mapper) {
+        public CategoryRepo(DecorContext context, IMapper mapper, ImageHepler imageHepler) {
             _context = context;
             _mapper = mapper;
+            _imageHepler = imageHepler;
         }
 
         public async Task<Api_response> getCategories()
@@ -54,6 +56,11 @@ namespace intern_prj.Repositories
             try
             {
                 var categoryOrigin = _mapper.Map<Category>(categoryRes);
+                if(categoryRes.image != null)
+                {
+                    var imageFileName = await _imageHepler.saveImage(categoryRes.image, "types");
+                    categoryOrigin.imageUrl = imageFileName;
+                }
                 _context.Categories.Add(categoryOrigin);
                 await _context.SaveChangesAsync();
                 return new Api_response
@@ -109,6 +116,11 @@ namespace intern_prj.Repositories
             }
 
             _mapper.Map(categoryRes, categoryOriginal);
+            if (categoryRes.image != null)
+            {
+                var imageFileName = await _imageHepler.saveImage(categoryRes.image, "types");
+                categoryOriginal.imageUrl = imageFileName;
+            }
 
             await _context.SaveChangesAsync();
 

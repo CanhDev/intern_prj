@@ -1,28 +1,39 @@
 ﻿using intern_prj.Data_response;
+using intern_prj.Entities;
 using intern_prj.Helper;
 using intern_prj.Repositories.interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace intern_prj.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ItemCartController : ControllerBase
     {
         private readonly IItemCartRepo _itemCartRepo;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly DecorContext _context;
 
-        public ItemCartController(IItemCartRepo itemCartRepo)
+        public ItemCartController(IItemCartRepo itemCartRepo, UserManager<ApplicationUser> userManager, DecorContext context)
         {
             _itemCartRepo = itemCartRepo;
+            _userManager = userManager;
+            _context = context;
         }
 
-        [HttpGet("GetByCart/{cartId}")]
-        public async Task<IActionResult> GetItemsCartByCartId(int cartId)
+        [HttpGet("GetByCart/{id}")]
+        public async Task<IActionResult> GetItemsCartByCartId(int id)
         {
             try
             {
-                var res = await _itemCartRepo.GetItemCart_Cart(cartId);
-                return Ok(res);
+                    var res = await _itemCartRepo.GetItemCart_Cart(id);
+                    return Ok(res);
+                
             }
             catch (Exception ex)
             {
@@ -53,11 +64,11 @@ namespace intern_prj.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteItem(int itemCartId)
+        public async Task<IActionResult> DeleteItem(int id)
         {
             try
             {
-                var res = await _itemCartRepo.DeleteItemCart(itemCartId);
+                var res = await _itemCartRepo.DeleteItemCart(id);
                 return Ok(res);
             }
             catch(Exception ex)

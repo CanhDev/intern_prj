@@ -1,7 +1,9 @@
 ﻿using intern_prj.Data_response;
 using intern_prj.Helper;
+using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +20,7 @@ namespace intern_prj.Controllers
             _oderRepo = oderRepo;
         }
         [HttpGet("{userId}")]
+        [Authorize]
         public async Task<IActionResult> GetOrdersByUser(string userId)
         {
             try
@@ -36,6 +39,7 @@ namespace intern_prj.Controllers
         }
 
         [HttpGet("GetSingleOrder/{orderId}")]
+        [Authorize]
         public async Task<IActionResult> GetOder(int orderId)
         {
             try
@@ -53,6 +57,7 @@ namespace intern_prj.Controllers
             }
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateOrder(OrderRes orderRes)
         {
             try
@@ -70,6 +75,7 @@ namespace intern_prj.Controllers
             }
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = AppRole.Admin)]
         public async Task<IActionResult> DeleteOrder(int id)
         {
             try
@@ -87,11 +93,31 @@ namespace intern_prj.Controllers
             }
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateStatus(int id, string status)
+        [Authorize(Roles = AppRole.Admin)]
+        public async Task<IActionResult> UpdateStatus(int id, string StatusPayment, string StatusShipping)
         {
             try
             {
-                var res = await _oderRepo.UpdateStatus(id, status);
+                var res = await _oderRepo.UpdateStatus(id, StatusPayment, StatusShipping);
+                return Ok(res);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                });
+            }
+        }
+        //
+        [HttpGet("GetOrderDetail/{orderId}")]
+        [Authorize]
+        public async Task<IActionResult> GetOrdersDetail(int orderId)
+        {
+            try
+            {
+                var res = await _oderRepo.GetOrdersDetail(orderId);
                 return Ok(res);
             }
             catch(Exception ex)

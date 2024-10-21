@@ -21,13 +21,17 @@ namespace intern_prj.Repositories
             _imageHepler = imageHepler;
         }
 
-        public async Task<Api_response> GetProductsAsync(int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 3)
+        public async Task<Api_response> GetProductsAsync
+                (int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 3, string? role = "")
         {
             // query
             IQueryable<Product> products = _context.Products
-            .Include(p => p.Images)
-            .Include(p => p.Category);
-
+                    .Include(p => p.Images)
+                    .Include(p => p.Category);
+            if (string.IsNullOrEmpty(role))
+            {
+                products = products.Where(p => p.OutOfStockstatus == false);
+            }
             int total = products.Count();
 
             if (typeId != null)
@@ -108,8 +112,11 @@ namespace intern_prj.Repositories
         }
         public async Task<Api_response> EditProductAsync(productRes productRes, int id)
         {
-            var editProduct = await _context.Products.Include(p => p.Images).FirstOrDefaultAsync(p => p.Id == id);
+            var editProduct = await _context.Products
+                .Include(p => p.Images)
+                .Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
             //
+            productRes.CreateDate = editProduct?.CreateDate;
             if(editProduct != null)
             {
                  _mapper.Map(productRes, editProduct);

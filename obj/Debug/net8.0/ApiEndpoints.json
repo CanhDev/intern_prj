@@ -354,32 +354,6 @@
   },
   {
     "ContainingType": "intern_prj.Controllers.OrderController",
-    "Method": "UpdateStatus",
-    "RelativePath": "api/Order/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "StatusPayment",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "StatusShipping",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "intern_prj.Controllers.OrderController",
     "Method": "GetOrdersByUser",
     "RelativePath": "api/Order/{userId}",
     "HttpMethod": "GET",
@@ -392,6 +366,32 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.Controllers.OrderController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/Order/ChangeOrderStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "intern_prj.Data_response.ChangeOrderStatusRes",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.Controllers.OrderController",
+    "Method": "getOrderList",
+    "RelativePath": "api/Order/GetAllOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -496,6 +496,11 @@
         "IsRequired": false
       },
       {
+        "Name": "OutOfStockstatus",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "CreateDate",
         "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
@@ -585,6 +590,11 @@
       {
         "Name": "Price",
         "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "OutOfStockstatus",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -861,7 +871,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "intern_prj.Controllers.UserController\u002BChangePasswordModel",
+        "Type": "intern_prj.Data_response.ChangePasswordRes",
         "IsRequired": true
       }
     ],

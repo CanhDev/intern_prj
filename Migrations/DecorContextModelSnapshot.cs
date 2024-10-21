@@ -525,6 +525,9 @@ namespace intern_prj.Migrations
                         .HasColumnType("decimal(18, 0)")
                         .HasColumnName("originalPrice");
 
+                    b.Property<bool?>("OutOfStockstatus")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 0)")
                         .HasColumnName("price");

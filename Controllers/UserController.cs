@@ -166,7 +166,7 @@ namespace intern_prj.Controllers
         }
         [Authorize]
         [HttpPut("Client/User/ChangePassword")]
-        public async Task<IActionResult> ChangePassword_Client([FromBody] ChangePasswordModel model)
+        public async Task<IActionResult> ChangePassword_Client([FromBody] ChangePasswordRes model)
         {
             try
             {
@@ -190,11 +190,6 @@ namespace intern_prj.Controllers
                     message = ex.Message,
                 });
             }
-        }
-        public class ChangePasswordModel
-        {
-            public string OldPassword { get; set; }
-            public string NewPassword { get; set; }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using intern_prj.Data_response;
+using intern_prj.Entities;
 
 namespace intern_prj.Data_request
 {
@@ -24,5 +25,6 @@ namespace intern_prj.Data_request
 
         public string? ShippingAddress { get; set; } = string.Empty;
         public ICollection<OrderDetailReq> OrderDetails { get; set; } = new List<OrderDetailReq>();
+        public virtual ApplicationUser? User { get; set; }
     }
 }

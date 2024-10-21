@@ -22,5 +22,6 @@ namespace intern_prj.Data_response
 
         public string? ShippingAddress { get; set; } = string.Empty;
         public ICollection<OrderDetailRes> OrderDetails { get; set; } = new List<OrderDetailRes>();
+        public virtual ApplicationUser? User { get; set; }
     }
 }

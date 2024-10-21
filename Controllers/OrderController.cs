@@ -19,6 +19,25 @@ namespace intern_prj.Controllers
         {
             _oderRepo = oderRepo;
         }
+
+        [HttpGet("GetAllOrder")]
+        [Authorize(Roles = AppRole.Admin)]
+        public async Task<IActionResult> getOrderList()
+        {
+            try
+            {
+                var res = await _oderRepo.GetAllOrders();
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new Api_response
+                {
+                    success = false,
+                    message = ex.Message
+                });
+            }
+        }
         [HttpGet("{userId}")]
         [Authorize]
         public async Task<IActionResult> GetOrdersByUser(string userId)
@@ -92,13 +111,14 @@ namespace intern_prj.Controllers
                 });
             }
         }
-        [HttpPut("{id}")]
+
+        [HttpPut("ChangeOrderStatus")]
         [Authorize(Roles = AppRole.Admin)]
-        public async Task<IActionResult> UpdateStatus(int id, string StatusPayment, string StatusShipping)
+        public async Task<IActionResult> UpdateStatus([FromBody] ChangeOrderStatusRes model)
         {
             try
             {
-                var res = await _oderRepo.UpdateStatus(id, StatusPayment, StatusShipping);
+                var res = await _oderRepo.UpdateStatus(model);
                 return Ok(res);
             }
             catch(Exception ex)

@@ -53,7 +53,7 @@ namespace intern_prj.Repositories
                                                                         && i.ProductId == itemCartRes.ProductId);
                 var product = await _context.Products.FindAsync(itemCartRes.ProductId);
 
-                if (product != null)
+                if (product != null && product.OutOfStockstatus == false)
                 {
                     if (item == null)
                     {
@@ -66,7 +66,6 @@ namespace intern_prj.Repositories
                         item.Quantity += itemCartRes.Quantity;
                         item.Price += itemCartRes.Price;
                     }
-
                     product.Quantity -= itemCartRes.Quantity.Value;
 
                     await _context.SaveChangesAsync();
@@ -75,6 +74,14 @@ namespace intern_prj.Repositories
                     {
                         success = true,
                         data = _mapper.Map<ItemCartReq>(item)
+                    };
+                }
+                else if(product?.OutOfStockstatus == true)
+                {
+                    return new Api_response
+                    {
+                        success = false,
+                        message = "product is out of stock"
                     };
                 }
                 else
@@ -88,7 +95,6 @@ namespace intern_prj.Repositories
             }
             catch (Exception ex)
             {
-                // Lấy thông tin chi tiết từ inner exception nếu có
                 string errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
 
                 return new Api_response

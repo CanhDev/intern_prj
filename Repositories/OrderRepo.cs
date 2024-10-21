@@ -18,6 +18,28 @@ namespace intern_prj.Repositories
             _context = context;
             _mapper = mapper;
         }
+
+        public async Task<Api_response> GetAllOrders()
+        {
+            try
+            {
+                var orders = await _context.Orders.ToListAsync();
+                    return new Api_response
+                    {
+                        success = true,
+                        data = _mapper.Map<List<OrderReq>>(orders)
+                    };
+            }
+            catch (Exception ex)
+            {
+                return new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                };
+            }
+        }
+
         public async Task<Api_response> GetOrdersByUser(string userId)
         {
             try
@@ -155,15 +177,15 @@ namespace intern_prj.Repositories
             }
         }
 
-        public async Task<Api_response> UpdateStatus(int id, string StatusPayment, string StatusShipping)
+        public async Task<Api_response> UpdateStatus(ChangeOrderStatusRes model)
         {
             try
             {
-                var order = await _context.Orders.FindAsync(id);
+                var order = await _context.Orders.FindAsync(model.orderId);
                 if (order != null)
                 {
-                    order.StatusShipping = StatusShipping;
-                    order.StatusPayment = StatusPayment;
+                    order.StatusShipping = model.StatusShipping;
+                    order.StatusPayment = model.StatusShipping;
                     await _context.SaveChangesAsync();
                     return new Api_response
                     {

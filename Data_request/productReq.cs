@@ -16,6 +16,7 @@ namespace intern_prj.Data_request
         public decimal OriginalPrice { get; set; }
 
         public decimal Price { get; set; }
+        public bool? OutOfStockstatus { get; set; } = false;
 
         public DateTime? CreateDate { get; set; } = null;
         public DateTime? UpdateDate { get; set; } = null;

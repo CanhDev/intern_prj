@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
+using System.Security.Claims;
 
 namespace intern_prj.Controllers
 {
@@ -33,8 +34,17 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _repos.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize);
-                return Ok(res);
+                string role = User?.FindFirst(ClaimTypes.Role)?.Value ?? "";
+                if(role != null && role == "Administrator")
+                {
+                    var res = await _repos.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize, role);
+                    return Ok(res);
+                }
+                else
+                {
+                    var res = await _repos.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize);
+                    return Ok(res);
+                }
             }
             catch (Exception ex)
             {

@@ -23,7 +23,6 @@ public partial class Order
 
     public string? PaymentMethod { get; set; } = string.Empty;
 
-    public string? ShippingAddress { get; set; } = string.Empty;
 
     public virtual ICollection<FeedBack> FeedBacks { get; set; } = new List<FeedBack>();
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();

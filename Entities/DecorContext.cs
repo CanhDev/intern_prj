@@ -142,9 +142,6 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
             entity.Property(e => e.PaymentMethod)
                 .HasMaxLength(50)
                 .HasColumnName("paymentMethod");
-            entity.Property(e => e.ShippingAddress)
-                .HasMaxLength(255)
-                .HasColumnName("shippingAddress");
             entity.Property(e => e.StatusPayment)
                 .HasMaxLength(50)
                 .HasDefaultValue("Đang chờ")

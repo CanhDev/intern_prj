@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\helper\\api_response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:helper\\api_response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Api_response.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Helper\\Api_response.cs",
-              "RelativeDocumentMoniker": "Helper\\Api_response.cs",
-              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Helper\\Api_response.cs",
-              "RelativeToolTip": "Helper\\Api_response.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T10:35:49.27Z",
+              "WhenOpened": "2024-10-22T01:20:45.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Services\\interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Services\\interfaces\\IProductService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Services\\interfaces\\IProductService.cs",
+              "RelativeToolTip": "Services\\interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T10:00:34.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductRepo.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\ProductRepo.cs",
+              "RelativeDocumentMoniker": "Repositories\\ProductRepo.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\ProductRepo.cs",
+              "RelativeToolTip": "Repositories\\ProductRepo.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAH4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T09:20:02.871Z",
               "EditorCaption": ""
             }
           ]

@@ -28,7 +28,14 @@ namespace intern_prj.Repositories
                     .Include(i => i.Product)               
                     .ThenInclude(p => p.Images)            
                     .ToListAsync();
-
+                foreach(var item in items)
+                {
+                    if(item?.Product?.Quantity <= 0)
+                    {
+                        _context.ItemCarts.Remove(item);
+                    }
+                }
+                await _context.SaveChangesAsync();
                 return new Api_response
                 {
                     success = true,

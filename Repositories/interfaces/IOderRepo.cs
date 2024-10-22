@@ -5,7 +5,7 @@ namespace intern_prj.Repositories.interfaces
 {
     public interface IOderRepo
     {
-        public Task<Api_response> GetAllOrders();
+        public Task<Api_response> GetAllOrders(string? filterString, int pageNumber = 1, int pageSize = 12);
         public Task<Api_response> GetOrdersByUser(string userId);
         public Task<Api_response> GetOder(int orderId);
         public Task<Api_response> CreateOrder(OrderRes orderRes);

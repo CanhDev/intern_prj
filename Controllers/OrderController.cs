@@ -22,11 +22,11 @@ namespace intern_prj.Controllers
 
         [HttpGet("GetAllOrder")]
         [Authorize(Roles = AppRole.Admin)]
-        public async Task<IActionResult> getOrderList()
+        public async Task<IActionResult> getOrderList(string? filterString, int pageNumber = 1, int pageSize = 12)
         {
             try
             {
-                var res = await _oderRepo.GetAllOrders();
+                var res = await _oderRepo.GetAllOrders(filterString, pageNumber, pageSize);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -114,7 +114,7 @@ namespace intern_prj.Controllers
 
         [HttpPut("ChangeOrderStatus")]
         [Authorize(Roles = AppRole.Admin)]
-        public async Task<IActionResult> UpdateStatus([FromBody] ChangeOrderStatusRes model)
+        public async Task<IActionResult> UpdateStatus(ChangeOrderStatusRes model)
         {
             try
             {

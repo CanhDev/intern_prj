@@ -5,6 +5,7 @@ using intern_prj.Entities;
 using intern_prj.Helper;
 using intern_prj.Repositories.interfaces;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList.EF;
 
 namespace intern_prj.Repositories
 {
@@ -19,15 +20,26 @@ namespace intern_prj.Repositories
             _mapper = mapper;
         }
 
-        public async Task<Api_response> GetAllOrders()
+        public async Task<Api_response> GetAllOrders(string? filterString, int pageNumber = 1, int pageSize = 12)
         {
             try
             {
-                var orders = await _context.Orders.ToListAsync();
+                IQueryable<Order> orders =  _context.Orders.Include(o => o.User);
+                orders = orders.OrderBy(o => o.OrderDate);
+                if(!string.IsNullOrEmpty(filterString))
+                {
+                    orders = orders.Where(o => o.OrderCode.Contains(filterString));
+                }
+                //paging
+                var ordersPaging = await orders.ToPagedListAsync(pageNumber, pageSize);
                     return new Api_response
                     {
                         success = true,
-                        data = _mapper.Map<List<OrderReq>>(orders)
+                        data = new
+                        {
+                            ordersList = _mapper.Map<List<OrderReq>>(ordersPaging),
+                            ordersLength = orders.Count()
+                        }
                     };
             }
             catch (Exception ex)
@@ -182,23 +194,14 @@ namespace intern_prj.Repositories
             try
             {
                 var order = await _context.Orders.FindAsync(model.orderId);
-                if (order != null)
-                {
                     order.StatusShipping = model.StatusShipping;
-                    order.StatusPayment = model.StatusShipping;
+                    order.StatusPayment = model.StatusPayment;
                     await _context.SaveChangesAsync();
                     return new Api_response
                     {
                         success = true,
+                        data = _mapper.Map<OrderReq>(order)
                     };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                    };
-                }
             }
             catch(Exception ex)
             {

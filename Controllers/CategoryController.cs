@@ -4,6 +4,8 @@ using intern_prj.Helper;
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +16,10 @@ namespace intern_prj.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoryRepo _categoryRepo;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryRepo categoryRepo) {
-            _categoryRepo = categoryRepo;
+        public CategoryController(ICategoryService categoryService) {
+            _categoryService = categoryService;
         }
 
         [HttpGet]
@@ -25,7 +27,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _categoryRepo.getCategories();
+                var res = await _categoryService.getCategories();
                 return Ok(res); 
             }
             catch (Exception ex)
@@ -42,7 +44,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _categoryRepo.getCategory(id);
+                var res = await _categoryService.getCategory(id);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -60,7 +62,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _categoryRepo.addCategory(categoryRes);
+                var res = await _categoryService.addCategory(categoryRes);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -79,7 +81,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _categoryRepo.editCategory(id, categoryRes);
+                var res = await _categoryService.editCategory(id, categoryRes);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -98,7 +100,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _categoryRepo.deleteCategory(id);
+                var res = await _categoryService.deleteCategory(id);
                 return Ok(res);
             }
             catch(Exception ex)

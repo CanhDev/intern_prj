@@ -20,115 +20,72 @@ namespace intern_prj.Repositories
             _imageHepler = imageHepler;
         }
 
-        public async Task<Api_response> getCategories()
-        {
-            var Categories = await _context.Categories.ToListAsync();
-            if(Categories == null)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = "Danh mục không tồn tại"
-                };
-            }
-            return new Api_response
-            {
-                success = true,
-                data = _mapper.Map<List<CategoryReq>>(Categories)
-            };
-        }
-
-        public async Task<Api_response> getCategory(int id)
-        {
-            var categoryQuery = await _context.Categories.FindAsync(id);
-            if(categoryQuery == null)
-            {
-                throw new Exception();
-            }
-            return new Api_response
-            {
-                success = true,
-                data = _mapper.Map<CategoryReq>(categoryQuery)
-            };
-        }
-        public async Task<Api_response> addCategory(CategoryRes categoryRes)
+        public async Task<List<Category>> getCategories()
         {
             try
             {
-                var categoryOrigin = _mapper.Map<Category>(categoryRes);
-                if(categoryRes.image != null)
-                {
-                    var imageFileName = await _imageHepler.saveImage(categoryRes.image, "types");
-                    categoryOrigin.imageUrl = imageFileName;
-                }
-                _context.Categories.Add(categoryOrigin);
+                var Categories = await _context.Categories.ToListAsync();
+                return Categories;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<Category?> getCategory(int id)
+        {
+            try
+            {
+                var categoryQuery = await _context.Categories.FindAsync(id);
+                return categoryQuery != null ? categoryQuery : null;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<CategoryReq?> addCategory(Category categoryEntity)
+        {
+            try
+            {
+                _context.Categories.Add(categoryEntity);
                 await _context.SaveChangesAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<CategoryReq>(categoryOrigin)
-                };
+                return _mapper.Map<CategoryReq>(categoryEntity);
             }
             catch (Exception ex)
             {
-                return new Api_response{
-                    success = false,
-                    message = ex.Message
-                };
+                throw new Exception(ex.Message);
             }
 
         }
 
-        public async Task<Api_response> deleteCategory(int id)
+        public async Task<bool> deleteCategory(Category categoryEntity)
         {
-            var categoryOrigin = await _context.Categories.FindAsync(id);
-            if( categoryOrigin == null)
+            try
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = "Danh mục không tồn tại"
-                };
-            }
-            else
-            {
-                _context.Categories.Remove(categoryOrigin);
+                _context.Categories.Remove(categoryEntity);
                 await _context.SaveChangesAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = id
-                };
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
-
-        public async Task<Api_response> editCategory(int id, CategoryRes categoryRes)
+        public async Task<CategoryReq?> editCategory(Category categoryEntity)
         {
-            var categoryOriginal = await _context.Categories.FindAsync(id);
-
-            if (categoryOriginal == null)
+            try
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = "Danh mục không tồn tại."
-                };
+                _context.Categories.Attach(categoryEntity);
+                _context.Entry(categoryEntity).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return _mapper.Map<CategoryReq>(categoryEntity);
             }
-
-            _mapper.Map(categoryRes, categoryOriginal);
-            if (categoryRes.image != null)
+            catch(Exception ex)
             {
-                var imageFileName = await _imageHepler.saveImage(categoryRes.image, "types");
-                categoryOriginal.imageUrl = imageFileName;
+                throw new Exception(ex.Message);
             }
-
-            await _context.SaveChangesAsync();
-
-            return new Api_response
-            {
-                success = true,
-                data = _mapper.Map<CategoryReq>(categoryOriginal)
-            };
         }
     }
 }

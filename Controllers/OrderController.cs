@@ -3,6 +3,8 @@ using intern_prj.Helper;
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +15,11 @@ namespace intern_prj.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly IOderRepo _oderRepo;
+        private readonly IOrderService _orderService;
 
-        public OrderController(IOderRepo oderRepo)
+        public OrderController(IOrderService orderService)
         {
-            _oderRepo = oderRepo;
+            _orderService = orderService;
         }
 
         [HttpGet("GetAllOrder")]
@@ -26,7 +28,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _oderRepo.GetAllOrders(filterString, pageNumber, pageSize);
+                var res = await _orderService.GetAllOrders(filterString, pageNumber, pageSize);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -44,7 +46,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _oderRepo.GetOrdersByUser(userId);
+                var res = await _orderService.GetOrdersByUser(userId);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -63,7 +65,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _oderRepo.GetOder(orderId);
+                var res = await _orderService.GetOder(orderId);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -81,7 +83,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res= await _oderRepo.CreateOrder(orderRes);
+                var res= await _orderService.CreateOrder(orderRes);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -99,7 +101,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _oderRepo.DeleteOrder(id);
+                var res = await _orderService.DeleteOrder(id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -118,7 +120,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _oderRepo.UpdateStatus(model);
+                var res = await _orderService.UpdateStatus(model);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -137,7 +139,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _oderRepo.GetOrdersDetail(orderId);
+                var res = await _orderService.GetOrdersDetail(orderId);
                 return Ok(res);
             }
             catch(Exception ex)

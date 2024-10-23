@@ -2,6 +2,8 @@
 using intern_prj.Entities;
 using intern_prj.Helper;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,15 +17,11 @@ namespace intern_prj.Controllers
     [Authorize]
     public class ItemCartController : ControllerBase
     {
-        private readonly IItemCartRepo _itemCartRepo;
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly DecorContext _context;
+        private readonly IItemCartService _itemCartService;
 
-        public ItemCartController(IItemCartRepo itemCartRepo, UserManager<ApplicationUser> userManager, DecorContext context)
+        public ItemCartController(IItemCartService itemCartService)
         {
-            _itemCartRepo = itemCartRepo;
-            _userManager = userManager;
-            _context = context;
+            _itemCartService = itemCartService;
         }
 
         [HttpGet("GetByCart/{id}")]
@@ -31,7 +29,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                    var res = await _itemCartRepo.GetItemCart_Cart(id);
+                    var res = await _itemCartService.GetItemCart_Cart(id);
                     return Ok(res);
                 
             }
@@ -50,7 +48,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _itemCartRepo.AddItemCart(itemCartRes);
+                var res = await _itemCartService.AddItemCart(itemCartRes);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -68,7 +66,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _itemCartRepo.DeleteItemCart(id);
+                var res = await _itemCartService.DeleteItemCart(id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -85,7 +83,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _itemCartRepo.UpdateQuantity(itemCartRes, id);
+                var res = await _itemCartService.UpdateQuantity(itemCartRes, id);
                 return Ok(res);
             }
             catch(Exception ex)

@@ -691,6 +691,7 @@ namespace intern_prj.Migrations
                     b.HasOne("intern_prj.Entities.ApplicationUser", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .HasConstraintName("FK_Order_user");
 
                     b.Navigation("User");

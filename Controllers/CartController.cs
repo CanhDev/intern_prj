@@ -1,6 +1,8 @@
 ﻿using intern_prj.Helper;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +15,10 @@ namespace intern_prj.Controllers
     [Authorize]
     public class CartController : ControllerBase
     {
-        private readonly ICartRepo _cartRepo;
+        private readonly ICartService _cartService;
 
-        public CartController(ICartRepo cartRepo) {
-            _cartRepo = cartRepo;
+        public CartController(ICartService cartService) {
+            _cartService = cartService;
         }
 
         [HttpGet]
@@ -25,7 +27,7 @@ namespace intern_prj.Controllers
             try
             {
                 string? id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var res = await _cartRepo.GetCartAsync(id);
+                var res = await _cartService.GetCartAsync(id);
                 return Ok(res);
             }
             catch (Exception ex)

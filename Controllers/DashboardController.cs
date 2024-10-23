@@ -2,6 +2,8 @@
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +15,11 @@ namespace intern_prj.Controllers
     [Authorize(Roles = AppRole.Admin)]
     public class DashboardController : ControllerBase
     {
-        private readonly IDashboardRepo _dashboardRepo;
-        public DashboardController(IDashboardRepo dashboardRepo)
+        private readonly IDashBoardService _dashBoardService;
+
+        public DashboardController(IDashBoardService dashBoardService)
         {
-            _dashboardRepo = dashboardRepo;
+            _dashBoardService = dashBoardService;
         }
 
         [HttpGet("Statistic")]
@@ -24,7 +27,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _dashboardRepo.GetRevenueStatistics(startDate, endDate);
+                var res = await _dashBoardService.GetRevenueStatistics(startDate, endDate);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -41,7 +44,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _dashboardRepo.GetTopSelling(count);
+                var res = await _dashBoardService.GetTopSelling(count);
                 return Ok(res);
             }
             catch(Exception ex)

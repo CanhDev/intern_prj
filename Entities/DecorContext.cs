@@ -152,14 +152,14 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
                 .HasColumnName("statusShipping");
             entity.Property(e => e.TotalAmount).HasColumnName("totalAmount");
             entity.Property(e => e.UserId).HasColumnName("userID");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_Order_user");
             entity.HasMany(o => o.OrderDetails)
                     .WithOne(od => od.Order)
                     .HasForeignKey(od => od.OrderId)
                     .OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne(d => d.User).WithMany(p => p.Orders)
+            .HasForeignKey(d => d.UserId)
+            .OnDelete(DeleteBehavior.Cascade) // Khi User bị xóa, tất cả Order liên quan cũng bị xóa
+            .HasConstraintName("FK_Order_user");
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>

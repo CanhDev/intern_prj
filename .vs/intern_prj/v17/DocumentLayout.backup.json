@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|c:\\users\\dell\\workplace\\2_project_ingithub\\intern_prj\\repositories\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DDF4D54-83B3-4986-B00D-62EFBBBACF66}|intern_prj.csproj|solutionrelative:repositories\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Services\\interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Services\\interfaces\\IProductService.cs",
-              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Services\\interfaces\\IProductService.cs",
-              "RelativeToolTip": "Services\\interfaces\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\UserRepo.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepo.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\UserRepo.cs",
+              "RelativeToolTip": "Repositories\\UserRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T10:00:34.874Z"
+              "WhenOpened": "2024-10-23T06:43:49.795Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductRepo.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\ProductRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\ProductRepo.cs",
-              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Repositories\\ProductRepo.cs",
-              "RelativeToolTip": "Repositories\\ProductRepo.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH4AAAA5AAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T09:20:02.871Z",
+              "WhenOpened": "2024-10-23T02:53:45.162Z",
               "EditorCaption": ""
             }
           ]

@@ -52,27 +52,19 @@ namespace intern_prj.Repositories
             }
         }
 
-        public async Task<Api_response> GetOrdersByUser(string userId)
+        public async Task<List<Order>> GetOrdersByUser(string userId)
         {
             try
             {
                 var orders = await _context.Orders.Where(o => o.UserId == userId).Include(o => o.OrderDetails).ToListAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<List<OrderReq>>(orders)
-                };
+                return orders;
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
-        public async Task<Api_response> GetOder(int orderId)
+        public async Task<Order?> GetOder(int orderId)
         {
             try
             {
@@ -80,112 +72,37 @@ namespace intern_prj.Repositories
                                 .Include(o => o.OrderDetails)
                                 .Include(o => o.FeedBacks)
                                 .FirstOrDefaultAsync(o => o.Id == orderId);
-                if (order == null)
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "order does not exist"
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<OrderReq>(order)
-                    };
-                }
+                return order;
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
-        public async Task<Api_response> CreateOrder(OrderRes orderRes)
+        public async Task<Order> CreateOrder(Order OrderEntity)
         {
             try
             {
-                var orderEntity = _mapper.Map<Order>(orderRes);
-                _context.Orders.Add(orderEntity);
-
-                var listOderDetail = orderEntity.OrderDetails?.ToList() ?? new List<OrderDetail>();
-                var productIds = listOderDetail.Select(od => od.ProductId).ToList();
-                var products = await _context.Products.Where(p => productIds.Contains(p.Id)).ToListAsync();
-
-                foreach (var orderDetail in listOderDetail)
-                {
-                    var productEntity = products.FirstOrDefault(p => p.Id == orderDetail.ProductId);
-                    if (productEntity != null)
-                    {
-                        if(productEntity.SoldedCount == null)
-                        {
-                            productEntity.SoldedCount = 0;
-                        }
-                        productEntity.SoldedCount += orderDetail.UnitQuantity;
-                        productEntity.Quantity -= orderDetail.UnitQuantity.Value;
-                    }
-                }
-
+                _context.Orders.Add(OrderEntity);
                 await _context.SaveChangesAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<OrderReq>(orderEntity)
-                };
+                return OrderEntity;
             }
-            catch (DbUpdateException dbEx)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = dbEx.InnerException?.Message ?? dbEx.Message,
-                };
-            }
+            
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.InnerException?.Message ?? ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
-        public async Task<Api_response> DeleteOrder(int orderId)
+        public async Task DeleteOrder(Order OrderEntity)
         {
             try
             {
-                var orderDelete = await _context.Orders.FindAsync(orderId);
-                if (orderDelete != null)
-                {
-                    _context.Orders.Remove(orderDelete);
-                    await _context.SaveChangesAsync();
-                    return new Api_response
-                    {
-                        success = true,
-                        data = orderId
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "order does not exist"
-                    };
-                }
+                _context.Orders .Remove(OrderEntity);
+                await _context.SaveChangesAsync();
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message
-                };
+                throw new Exception(ex.Message);
             }
         }
 
@@ -212,26 +129,31 @@ namespace intern_prj.Repositories
                 };
             }
         }
-
-        public async Task<Api_response> GetOrdersDetail(int orderId)
+        public async Task<Order> UpdateOrder(Order OrderEntity)
+        {
+            try
+            {
+                _context.Orders.Attach(OrderEntity);
+                _context.Orders.Entry(OrderEntity).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return OrderEntity;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<List<OrderDetail>> GetOrdersDetail(int orderId)
         {
             try
             {
                 var ordersDetail = await _context.OrderDetails.Include(od => od.Product.Images)
                     .Where(od => od.OrderId == orderId).ToListAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<List<OrderDetailReq>>(ordersDetail)
-                };
+                return ordersDetail;
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message
-                };
+                throw new Exception(ex.Message);
             }
         }
     }

@@ -1,287 +1,145 @@
-﻿using AutoMapper;
-using intern_prj.Data_request;
-using intern_prj.Data_response;
-using intern_prj.Entities;
-using intern_prj.Helper;
+﻿using intern_prj.Entities;
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace intern_prj.Repositories
 {
     public class UserRepo : IUserRepo
     {
         private readonly DecorContext _context;
-        private readonly IMapper _mapper;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly ImageHepler _imageHepler;
-        private readonly ICartRepo _cartRepo;
+        private readonly ICartService _cartService;
 
-        public UserRepo(DecorContext context, IMapper mapper, ICartRepo cartRepo,
-            UserManager<ApplicationUser> userManager
-           ,RoleManager<IdentityRole> roleManager
-           ,ImageHepler imageHepler)
+        public UserRepo(DecorContext context, ICartService cartService,
+            UserManager<ApplicationUser> userManager)
         {
             _context = context;
-            _mapper = mapper;
             _userManager = userManager;
-            _roleManager = roleManager;
-            _imageHepler = imageHepler;
-            _cartRepo = cartRepo;
+            _cartService = cartService;
         }
-        public async Task<Api_response> GetUsers_Admin()
+        public async Task<List<ApplicationUser>> GetUsers_Admin()
         {
             try
             {
                 var users = await _userManager.Users.ToListAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<List<UserReq>>(users)
-                };
+                return users;
             }
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> GetUser_Admin(string id)
+        public async Task<ApplicationUser?> GetUser_Admin(string id)
         {
             try
             {
                 var user = await _userManager.FindByIdAsync(id);
-                if(user == null)
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "User does not exist"
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<UserReq>(user)
-                    };
-                }
+                return user ?? null;
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> CreateUserAsync_Admin(UserRes userRes)
+        public async Task<ApplicationUser?> CreateUserAsync_Admin(ApplicationUser userEntity, string password)
         {
             try
             {
-                var user = _mapper.Map<ApplicationUser>(userRes);
-                user.UserName = userRes.Email;
-                if (userRes.AvatarImage != null)
+                if(userEntity.Email == null)
                 {
-                    var imageUrl = await _imageHepler.saveImage(userRes.AvatarImage, "avatars");
-                    user.avatarUrl = imageUrl;
-                }
-                var res = await _userManager.CreateAsync(user, userRes.Password);
-                if (res.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(user, AppRole.Customer);
-                    await _cartRepo.InitCart(user.Id);
-
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<UserReq>(user)
-                    };
+                    return null;
                 }
                 else
                 {
-                    var errors = string.Join(", ", res.Errors.Select(e => e.Description));
-                    return new Api_response
+                    var existingUser = await _userManager.FindByEmailAsync(userEntity.Email);
+                    if(existingUser == null)
                     {
-                        success = false,
-                        message = $"Create User failed: {errors}"
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message
-                };
-            }
-        }
-
-        public async Task<Api_response> UpdateUserAsync_Admin(UserRes userRes, string id)
-        {
-            try
-            {
-                var user = await _userManager.FindByIdAsync(id);
-                if (user != null)
-                {
-                    _mapper.Map(userRes, user);
-                    if (userRes.AvatarImage != null)
-                    {
-                        var imageUrl = await _imageHepler.saveImage(userRes.AvatarImage, "avatars");
-                        user.avatarUrl = imageUrl;
+                        var res = await _userManager.CreateAsync(userEntity, password);
+                        if (res.Succeeded)
+                        {
+                            await _userManager.AddToRoleAsync(userEntity, AppRole.Customer);
+                            await _cartService.InitCart(userEntity.Id);
+                            return userEntity;
+                        }
+                        else return null;
                     }
-                    var updateResult = await _userManager.UpdateAsync(user);
-                    
-                    return new Api_response
+                    else
                     {
-                        success = true,
-                        message = "User updated successfully.",
-                        data = _mapper.Map<UserReq>(user)
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "User not found."
-                    };
+                        return null;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> DeleteUserAsync_Admin(string id)
+        public async Task<ApplicationUser?> UpdateUserAsync_Admin(ApplicationUser userEntity)
+        {
+            try
+            {
+                var result = await _userManager.UpdateAsync(userEntity);
+                return result.Succeeded ? userEntity : null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception (ex.Message);
+            }
+        }
+
+        public async Task<bool> DeleteUserAsync_Admin(string id)
         {
             try
             {
                 var userDelete = await _userManager.FindByIdAsync(id);
                 if (userDelete != null)
                 {
-                    await _userManager.DeleteAsync(userDelete);
-                    return new Api_response
-                    {
-                        success = true,
-                        data = id
-                    };
+                    var result =  await _userManager.DeleteAsync(userDelete);
+                    return result.Succeeded;
                 }
                 else
                 {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "user does not exist"
-                    };
+                    return false;
                 }
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> GetUserAsync_Client(string id)
+        public async Task<ApplicationUser?> GetUserAsync_Client(string id)
         {
             try
             {
                 var user = await _userManager.FindByIdAsync(id);
-                if(user != null)
-                {
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<UserReq>(user)
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "user does not exist"
-                    };
-                }
+                return user != null ? user : null;
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
-        public async Task<Api_response> UpdateUserAsync_Client(UserRes userRes, string id)
+        public async Task<ApplicationUser?> UpdateUserAsync_Client(ApplicationUser userEntity)
         {
             try
             {
-                var user = await _userManager.FindByIdAsync(id);
-                if(user != null)
-                {
-                    _mapper.Map(userRes, user);
-                    if (userRes.AvatarImage != null)
-                    {
-                        var imageUrl = await _imageHepler.saveImage(userRes.AvatarImage, "avatars");
-                        user.avatarUrl = imageUrl;
-                    }
-                    var updateResult = await _userManager.UpdateAsync(user);
-                    if (!updateResult.Succeeded)
-                    {
-                        return new Api_response
-                        {
-                            success = false,
-                            message = "Update user failed. " + string.Join(", ", updateResult.Errors.Select(e => e.Description))
-                        };
-                    }
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<UserReq>(user)
-                    };
-
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "user does not exist"
-                    };
-                }
+                var updateResult = await _userManager.UpdateAsync(userEntity);
+                return updateResult.Succeeded ? userEntity : null;
             }
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = $"An error occurred: {ex.Message}" + (ex.InnerException != null ? $" Inner Exception: {ex.InnerException.Message}" : string.Empty),
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> ChangePassword_Client(string id, string oldPassword, string newPassword)
+        public async Task<ApplicationUser?> ChangePassword_Client(string id, string oldPassword, string newPassword)
         {
             try
             {
@@ -289,40 +147,16 @@ namespace intern_prj.Repositories
                 if(user != null)
                 {
                     var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
-                    if (result.Succeeded)
-                    {
-                        return new Api_response
-                        {
-                            success = true,
-                            message = "Change Password successful",
-                            data = _mapper.Map<UserReq>(user)
-                        };
-                    }
-                    else
-                    {
-                        return new Api_response
-                        {
-                            success = false,
-                            message = "Wrong current Password"
-                        };
-                    }
+                    return result.Succeeded ? user : null;
                 }
                 else
                 {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "user does not exist"
-                    };
+                    return null;
                 }
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
     }

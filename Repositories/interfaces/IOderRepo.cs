@@ -1,4 +1,5 @@
 ﻿using intern_prj.Data_response;
+using intern_prj.Entities;
 using intern_prj.Helper;
 
 namespace intern_prj.Repositories.interfaces
@@ -6,11 +7,12 @@ namespace intern_prj.Repositories.interfaces
     public interface IOderRepo
     {
         public Task<Api_response> GetAllOrders(string? filterString, int pageNumber = 1, int pageSize = 12);
-        public Task<Api_response> GetOrdersByUser(string userId);
-        public Task<Api_response> GetOder(int orderId);
-        public Task<Api_response> CreateOrder(OrderRes orderRes);
-        public Task<Api_response> DeleteOrder(int orderId);
+        public Task<List<Order>> GetOrdersByUser(string userId);
+        public Task<Order?> GetOder(int orderId);
+        public Task<Order> CreateOrder(Order OrderEntity);
+        public Task<Order> UpdateOrder(Order OrderEntity);
+        public Task DeleteOrder(Order OrderEntity);
         public Task<Api_response> UpdateStatus(ChangeOrderStatusRes model);
-        public Task<Api_response> GetOrdersDetail(int orderId);
+        public Task<List<OrderDetail>> GetOrdersDetail(int orderId);
     }
 }

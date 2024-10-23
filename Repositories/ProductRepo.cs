@@ -59,133 +59,87 @@ namespace intern_prj.Repositories
             };
         }
 
-        public async Task<Api_response> GetProductAsync(int id)
+
+        public async Task<List<Product>> GetProductsbyIds(List<int> ids)
+        {
+            try
+            {
+                var productsEntityList = await _context.Products.Where(p => ids.Contains(p.Id)).ToListAsync();
+                return productsEntityList;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<Product?> GetProductAsync(int? id)
         {
             var product = await _context.Products
                             .Include(p => p.Images)
-                            .FirstOrDefaultAsync(p => p.Id == id);
-            if (product!= null)
-            {
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<productReq>(product)
-                };
-            }
-            else
-            {
-                return new Api_response
-                {
-                    success = true,
-                    data= null
-                };
-            }
+                            .Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
+            return product != null ? product : null;
         }
-        public async Task<Api_response> AddProductAsync(productRes productRes)
+        public async Task<productReq?> AddProductAsync(Product productEntity)
         {
-            var productReqest = _mapper.Map<productReq>(productRes);
-
-            if (productRes.imgs != null && productRes.imgs.Count > 0)
+            try
             {
-                foreach (var img in productRes.imgs)
-                {
-                    var imgFileName = await _imageHepler.saveImage(img, "products");
-                    if (imgFileName != null)
-                    {
-                        productReqest.Images.Add(new imageReq { ImageUrl = imgFileName });
-                    }
-                }
-            }
-
-            var newProduct = _mapper.Map<Product>(productReqest);
-            newProduct.CreateDate = DateTime.Now;
-            await _context.Products.AddAsync(newProduct);
-            await _context.SaveChangesAsync();
-            //
-            var returnProduct = _mapper.Map<productReq>(newProduct);
-
-            return new Api_response
-            {
-                success = true,
-                data = returnProduct
-            };
-        }
-        public async Task<Api_response> EditProductAsync(productRes productRes, int id)
-        {
-            var editProduct = await _context.Products
-                .Include(p => p.Images)
-                .Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
-            //
-            productRes.CreateDate = editProduct?.CreateDate;
-            if(editProduct != null)
-            {
-                 _mapper.Map(productRes, editProduct);
+                await _context.Products.AddAsync(productEntity);
+                await _context.SaveChangesAsync();
                 //
-                if (productRes.ImageUrls.Count > 0)
-                {
-                    editProduct.Images.Clear();
-                    foreach (var img in productRes.ImageUrls)
-                    {
-                        editProduct.Images.Add(new Image {ProductId = id, ImageUrl = img });
-                    }
-                }
-                if (productRes.imgs != null && productRes.imgs.Count > 0)
-                {
-                    foreach (var img in productRes.imgs)
-                    {
-                        var imgFileName = await _imageHepler.saveImage(img, "products");
-                        if (imgFileName != null)
-                        {
-                            editProduct.Images.Add(new Image { ProductId = id, ImageUrl = imgFileName });
-                        }
-                    }
-                }
-                //
-               await _context.SaveChangesAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<productReq>(editProduct)
-                };
+                return _mapper.Map<productReq>(productEntity);
             }
-            else
+            catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    data = "Sản phẩm không tồn tại"
-                };
+                throw new Exception(ex.Message);
             }
         }
-        public async Task<Api_response> DeleteProductAsync(int id)
+        public async Task<productReq?> EditProductAsync(Product productEntity)
         {
-            var deleteProduct = await _context.Products.FindAsync(id);
-            if (deleteProduct != null)
+            try
             {
-                _context.Products.Remove(deleteProduct);
-                try
-                {
-                    await _context.SaveChangesAsync();
-                    return new Api_response
-                    {
-                        success = true,
-                        data = id
-                    };
-                }
-                catch (DbUpdateException ex)
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "Lỗi khi xóa sản phẩm: " + ex.InnerException?.Message
-                    };
-                }
+                _context.Products.Attach(productEntity);
+                _context.Entry(productEntity).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+
+                return _mapper.Map<productReq?>(productEntity);
             }
-            return new Api_response
+            catch(Exception ex)
             {
-                success = false,
-                message = "Sản phẩm không tồn tại"
-            };
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task EditProductsAsync(List<Product> productEntityList)
+        {
+            try
+            {
+                _context.Products.AttachRange(productEntityList);
+                foreach (var product in productEntityList)
+                {
+                    _context.Entry(product).State = EntityState.Modified;
+                }
+
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<bool> DeleteProductAsync(Product productEntity)
+        {
+            try
+            {
+                _context.Products.Remove(productEntity);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         //sort by data & price

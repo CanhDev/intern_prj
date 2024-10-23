@@ -2,6 +2,8 @@
 using intern_prj.Helper;
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +15,10 @@ namespace intern_prj.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepo _userRepo;
+        private readonly IUserService _userService;
 
-        public UserController(IUserRepo userRepo) {
-            _userRepo = userRepo;
+        public UserController(IUserService userService) {
+            _userService = userService;
         }
         [Authorize(Roles = AppRole.Admin)]
         [HttpGet("Admin/User")]
@@ -24,7 +26,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _userRepo.GetUsers_Admin();
+                var res = await _userService.GetUsers_Admin();
                 return Ok(res);
             }
             catch (Exception ex)
@@ -42,7 +44,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _userRepo.GetUser_Admin(id);
+                var res = await _userService.GetUser_Admin(id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -60,7 +62,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _userRepo.CreateUserAsync_Admin(userRes);
+                var res = await _userService.CreateUserAsync_Admin(userRes);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -78,7 +80,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _userRepo.UpdateUserAsync_Admin(userRes, id);
+                var res = await _userService.UpdateUserAsync_Admin(userRes, id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -96,7 +98,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _userRepo.DeleteUserAsync_Admin(id);
+                var res = await _userService.DeleteUserAsync_Admin(id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -125,7 +127,7 @@ namespace intern_prj.Controllers
                         message = "Unauthorized"
                     });
                 }
-                var res = await _userRepo.GetUserAsync_Client(id);
+                var res = await _userService.GetUserAsync_Client(id);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -152,7 +154,7 @@ namespace intern_prj.Controllers
                         message = "Unauthorized"
                     });
                 }
-                var res = await _userRepo.UpdateUserAsync_Client(userRes, id);
+                var res = await _userService.UpdateUserAsync_Client(userRes, id);
                 return Ok(res);
             }
             catch(Exception ex)
@@ -179,7 +181,7 @@ namespace intern_prj.Controllers
                         message = "Unauthorized"
                     });
                 }
-                var res = await _userRepo.ChangePassword_Client(id, model.OldPassword, model.NewPassword);
+                var res = await _userService.ChangePassword_Client(id, model.OldPassword, model.NewPassword);
                 return Ok(res);
             }
             catch(Exception ex)

@@ -1,15 +1,9 @@
-﻿using AutoMapper;
-using Azure.Core;
-using intern_prj.Data_request;
-using intern_prj.Data_response;
-using intern_prj.Entities;
+﻿using intern_prj.Data_response;
 using intern_prj.Helper;
 using intern_prj.Helper.jwtSerivce;
-using intern_prj.Repositories.interfaces;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic;
 using System.Security.Claims;
 
 namespace intern_prj.Controllers
@@ -18,16 +12,10 @@ namespace intern_prj.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductRepo _repos;
-        private readonly IMapper _mapper;
-        private readonly IWebHostEnvironment _environment;
-        private readonly ImageHepler _imageHepler;
+        private readonly IProductService _productService;
 
-        public ProductController(IProductRepo repos, IMapper mapper, IWebHostEnvironment environment, ImageHepler imageHepler) {
-            _repos = repos;
-            _mapper = mapper;
-            _environment = environment;
-            _imageHepler = imageHepler;
+        public ProductController(IProductService productService) {
+            _productService = productService;
         }
         [HttpGet]
         public async Task<IActionResult> getProducts(int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 9)
@@ -37,12 +25,12 @@ namespace intern_prj.Controllers
                 string role = User?.FindFirst(ClaimTypes.Role)?.Value ?? "";
                 if(role != null && role == "Administrator")
                 {
-                    var res = await _repos.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize, role);
+                    var res = await _productService.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize, role);
                     return Ok(res);
                 }
                 else
                 {
-                    var res = await _repos.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize);
+                    var res = await _productService.GetProductsAsync(typeId, sortString, filterString, pageNumber, pageSize);
                     return Ok(res);
                 }
             }
@@ -60,7 +48,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var res = await _repos.GetProductAsync(id);
+                var res = await _productService.GetProductAsync(id);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -79,7 +67,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var api_res = await _repos.AddProductAsync(productRes);
+                var api_res = await _productService.AddProductAsync(productRes);
                 return Ok(api_res);
 
             }
@@ -100,7 +88,7 @@ namespace intern_prj.Controllers
             try
             {
                 
-                var api_res = await _repos.EditProductAsync(productRes, id);
+                var api_res = await _productService.EditProductAsync(productRes, id);
                 return Ok(api_res);
             }
             catch (Exception ex)
@@ -119,7 +107,7 @@ namespace intern_prj.Controllers
         {
             try
             {
-                var api_res = await _repos.DeleteProductAsync(id);
+                var api_res = await _productService.DeleteProductAsync(id);
                 return Ok(api_res);
             }
             catch(Exception ex)
@@ -131,6 +119,5 @@ namespace intern_prj.Controllers
                 });
             }
         }
-
     }
 }

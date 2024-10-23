@@ -1,4 +1,5 @@
-﻿using intern_prj.Data_response;
+﻿using intern_prj.Data_request;
+using intern_prj.Data_response;
 using intern_prj.Entities;
 using intern_prj.Helper;
 using System.Runtime.CompilerServices;
@@ -10,10 +11,12 @@ namespace intern_prj.Repositories.interfaces
         //interact with database
         public Task<Api_response> GetProductsAsync
             (int? typeId, string? sortString, string? filterString, int pageNumber = 1, int pageSize = 3, string? role = "");
-        public Task<Api_response> GetProductAsync(int id);
-        public Task<Api_response> AddProductAsync(productRes productRes);
-        public Task<Api_response> EditProductAsync(productRes productRes, int id);
-        public Task<Api_response> DeleteProductAsync(int id);
+        public Task<List<Product>> GetProductsbyIds(List<int> ids);
+        public Task<Product?> GetProductAsync(int? id);
+        public Task<productReq?> AddProductAsync(Product productEntity);
+        public Task<productReq?> EditProductAsync(Product productEntity);
+        public Task EditProductsAsync(List<Product> productEntityList);
+        public Task<bool> DeleteProductAsync(Product productEntity);
 
 
         // sort & filter

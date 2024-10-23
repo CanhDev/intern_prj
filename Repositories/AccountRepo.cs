@@ -4,6 +4,8 @@ using intern_prj.Entities;
 using intern_prj.Helper;
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Identity;
 
 namespace intern_prj.Repositories
@@ -11,124 +13,39 @@ namespace intern_prj.Repositories
     public class AccountRepo : IAccountRepo
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly JwtHelper _jwtHelper;
-        private readonly ICartRepo _cartRepo;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public AccountRepo(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
             RoleManager<IdentityRole> roleManager,
-            IConfiguration configuration,
             DecorContext context,
-            JwtHelper jwtHelper,
-            ICartRepo cartRepo,
+            
             IHttpContextAccessor httpContextAccessor)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
             _roleManager = roleManager;
-            _jwtHelper = jwtHelper;
-            _cartRepo = cartRepo;
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task<Api_response> SignUpAsync(SignUpRes model)
+        public async Task<ApplicationUser?> CheckAccount(LoginRes model)
         {
-            var request = _httpContextAccessor.HttpContext?.Request;
-            var defaultImageUrl = $"{request.Scheme}://{request.Host}/resource/images/default/no_avatar.png";
-
-            // Kiểm tra xem email đã tồn tại hay chưa
-            var existingUser = await _userManager.FindByEmailAsync(model.Email);
-            if (existingUser != null)
+            try
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = "Email đã tồn tại. Vui lòng sử dụng email khác."
-                };
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
+                if (user == null || !passwordValid) return null;
+                return user;
             }
-
-            var userAccount = new ApplicationUser
+            catch(Exception ex)
             {
-                FirstName = model.fname,
-                LastName = model.lname,
-                Email = model.Email,
-                UserName = model.Email,
-                avatarUrl = defaultImageUrl
-            };
-
-            var result = await _userManager.CreateAsync(userAccount, model.Password);
-            if (result.Succeeded)
-            {
-                if (!await _roleManager.RoleExistsAsync(AppRole.Customer))
-                {
-                    await _roleManager.CreateAsync(new IdentityRole(AppRole.Customer));
-                }
-                if (!await _roleManager.RoleExistsAsync(AppRole.Admin))
-                {
-                    await _roleManager.CreateAsync(new IdentityRole(AppRole.Admin));
-                }
-                if (userAccount.Email == "Admin@gmail.com")
-                {
-                    await _userManager.AddToRoleAsync(userAccount, AppRole.Admin);
-                }
-                else
-                {
-                    await _userManager.AddToRoleAsync(userAccount, AppRole.Customer);
-                }
-
-                await _cartRepo.InitCart(userAccount.Id);
-            }
-            return new Api_response
-            {
-                success = result.Succeeded,
-                message = result.Succeeded ? "SignUp successful" : "SignUp failed"
-            };
-        }
-
-        public async Task<Api_response> LoginAsync(LoginRes model)
-        {
-            var user = await _userManager.FindByEmailAsync(model.Email);
-            var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
-
-            if(user == null || !passwordValid)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = "Sai tên đăng nhập hoặc mật khẩu"
-                };
-            }
-            else
-            {
-                var result = await _jwtHelper.GenerateToken(user);
-                return new Api_response
-                {
-                    success = true,
-                    message = "Login successfull",
-                    data = new {
-                        token = result,
-                        userInfo = new UserReq
-                        {
-                            Id = user.Id,
-                            FirstName = user.FirstName,
-                            LastName = user.LastName,
-                            Email = user.Email,
-                            avatarUrl = user.avatarUrl,
-                            PhoneNum = user.PhoneNum,
-                            Address = user.Address,
-                        }
-                    }
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> RenewTokenAsync(TokenModel model)
+        public async Task<bool> CreateAccount(ApplicationUser userAccount, string password)
         {
-            return await _jwtHelper.RefreshToken(model);
+            var result = await _userManager.CreateAsync(userAccount, password);
+            return result.Succeeded;
         }
-
     }
 }

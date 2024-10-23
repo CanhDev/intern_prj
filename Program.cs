@@ -4,6 +4,8 @@ using intern_prj.Helper;
 using intern_prj.Helper.jwtSerivce;
 using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
+using intern_prj.Services;
+using intern_prj.Services.interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -104,15 +106,22 @@ namespace intern_prj
             builder.Services.AddScoped<JwtHelper>();
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddScoped<IProductRepo, ProductRepo>();
+            builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<ImageHepler>();
             builder.Services.AddScoped<IAccountRepo, AccountRepo>();
+            builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<ICartRepo, CartRepo>();
+            builder.Services.AddScoped<ICartService, CartService>();
             builder.Services.AddScoped<IItemCartRepo, ItemCartRepo>();
+            builder.Services.AddScoped<IItemCartService, ItemCartService>();
             builder.Services.AddScoped<IOderRepo, OrderRepo>();
-            builder.Services.AddScoped<IFeedBackRepo, FeedBackRepo>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<IUserRepo, UserRepo>();
+            builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IDashboardRepo, DashboardRepo>();
+            builder.Services.AddScoped<IDashBoardService, DashBoardService>();
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",

@@ -19,7 +19,7 @@ namespace intern_prj.Repositories
             _mapper = mapper;
         }
 
-        public async Task<Api_response> GetItemCart_Cart(int cartId)
+        public async Task<List<ItemCart>> GetItemCart_Cart(int cartId)
         {
             try
             {
@@ -36,144 +36,75 @@ namespace intern_prj.Repositories
                     }
                 }
                 await _context.SaveChangesAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<List<ItemCartReq>>(items)
-                };
+                return items;
             }
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> AddItemCart(ItemCartRes itemCartRes)
+        public Task<ItemCart?> GetItemCart_productId_cartId(int? productId, int? cartId)
         {
             try
             {
-                var item = await _context.ItemCarts.FirstOrDefaultAsync(i => i.CartId == itemCartRes.CartId
-                                                                        && i.ProductId == itemCartRes.ProductId);
-                var product = await _context.Products.FindAsync(itemCartRes.ProductId);
-
-                if (product != null && product.OutOfStockstatus == false)
-                {
-                    if (item == null)
-                    {
-                        item = new ItemCart();
-                        _mapper.Map(itemCartRes, item);
-                        _context.ItemCarts.Add(item);
-                    }
-                    else
-                    {
-                        item.Quantity += itemCartRes.Quantity;
-                        item.Price += itemCartRes.Price;
-                    }
-                    product.Quantity -= itemCartRes.Quantity.Value;
-
-                    await _context.SaveChangesAsync();
-
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<ItemCartReq>(item)
-                    };
-                }
-                else if(product?.OutOfStockstatus == true)
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "product is out of stock"
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "Product does not exist",
-                    };
-                }
+                var itemCartEntity = _context.ItemCarts.FirstOrDefaultAsync(i => i.CartId == cartId
+                                                                        && i.ProductId == productId);
+                return itemCartEntity;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                string errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
-
-                return new Api_response
-                {
-                    success = false,
-                    message = errorMessage,
-                };
+                throw new Exception(ex.Message);
             }
         }
-
-
-        public async Task<Api_response> DeleteItemCart(int itemCartId)
+        public async Task<ItemCart?> GetItemCart(int id)
         {
             try
             {
-                var item = await _context.ItemCarts.FindAsync(itemCartId);
-                var product = await _context.Products.FindAsync(item.ProductId);
-                //
-                if(product != null || item.Quantity.HasValue)
-                {
-                    product.Quantity += item.Quantity.Value;
-                }
-                _context.ItemCarts.Remove(item);
+                var itemCartEntity =  await _context.ItemCarts
+                    .Include(i => i.Product)
+                    .ThenInclude(i => i.Images)
+                    .FirstOrDefaultAsync(i => i.Id == id);
+                return itemCartEntity;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<ItemCart?> UpdateItemCart(ItemCart item)
+        {
+            _context.ItemCarts.Attach(item);
+            _context.ItemCarts.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return item;
+        }
+
+        public async Task<ItemCart> AddItemCart(ItemCart itemCartEntity)
+        {
+            try
+            {
+                _context.ItemCarts.Add(itemCartEntity);
                 await _context.SaveChangesAsync();
-                return new Api_response
-                {
-                    success = true,
-                    data = itemCartId
-                };
+                return itemCartEntity;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<Api_response> UpdateQuantity(ItemCartRes itemCartRes, int id)
+
+        public async Task DeleteItemCart(ItemCart itemCartEntity)
         {
             try
             {
-                var item = await _context.ItemCarts.Include(i => i.Product).ThenInclude(i => i.Images).FirstOrDefaultAsync(i => i.Id == id);
-                if(item != null)
-                {
-                    item.Quantity = itemCartRes.Quantity;
-                    item.Price = itemCartRes.Price;
-                    await _context.SaveChangesAsync();
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<ItemCartReq>(item)
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "ItemCart does not exist"
-                    };
-                }
+                _context.ItemCarts.Remove(itemCartEntity);
+                await _context.SaveChangesAsync();
             }
             catch(Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
     }

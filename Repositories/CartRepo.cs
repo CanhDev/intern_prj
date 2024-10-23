@@ -18,7 +18,7 @@ namespace intern_prj.Repositories
             _context = context;
             _mapper = mapper;
         }
-        public async Task<Api_response> GetCartAsync(string userid)
+        public async Task<Cart?> GetCartAsync(string userid)
         {
             try
             {
@@ -27,90 +27,23 @@ namespace intern_prj.Repositories
                     .ThenInclude(ic => ic.Product)
                     .ThenInclude(p => p.Images)
                     .FirstOrDefaultAsync(c => c.UserId == userid);
-                return new Api_response
-                {
-                    success = true,
-                    data = _mapper.Map<CartReq>(cart)
-                };
+                return cart;
             }
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
-        public async Task<Api_response> InitCart(string userId)
+        public async Task InitCart(Cart cartEntity)
         {
             try
             {
-                var cartInit = await _context.Carts.FirstOrDefaultAsync(c => c.UserId == userId);
-                if (cartInit != null)
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "Cart already exists"
-                    };
-                }
-                else
-                {
-                    cartInit = new Cart
-                    {
-                        UserId = userId,
-                        CreateDate = DateTime.UtcNow
-                    };
-                    _context.Carts.Add(cartInit);
-                    await _context.SaveChangesAsync();
-                    return new Api_response
-                    {
-                        success = true,
-                        message = "Init Cart successful"
-                    };
-                }
+                 _context.Carts.Add(cartEntity);
+                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message,
-                };
-            }
-        }
-        public async Task<Api_response> DeleteCart(int idCart)
-        {
-            try
-            {
-                var cartDelete = await _context.Carts.FindAsync(idCart);
-                if (cartDelete != null)
-                {
-                     _context.Carts.Remove(cartDelete);
-                    await _context.SaveChangesAsync();
-                    return new Api_response
-                    {
-                        success = true,
-                        message = "Delete cart successful"
-                    };
-                }
-                else
-                {
-                    return new Api_response
-                    {
-                        success = false,
-                        message = "Cart does not exist"
-                    };
-                }
-            }
-            catch(Exception ex)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex?.Message,
-                };
+                throw new Exception(ex.Message);
             }
         }
     }

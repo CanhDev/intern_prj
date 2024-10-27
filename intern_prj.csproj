@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="GeneralModels\" />
     <Folder Include="resource\images\avatars\" />
   </ItemGroup>
 

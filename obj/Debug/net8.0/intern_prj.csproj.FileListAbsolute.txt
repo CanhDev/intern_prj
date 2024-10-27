@@ -1,3 +1,13 @@
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.csproj.AssemblyReference.cache
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.AssemblyInfoInputs.cache
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.AssemblyInfo.cs
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.sourcelink.json
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.dll
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.pdb
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\appsettings.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\intern_prj.exe
@@ -240,14 +250,6 @@ C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\runtimes\
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.csproj.AssemblyReference.cache
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.AssemblyInfoInputs.cache
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.AssemblyInfo.cs
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.csproj.CoreCompileInputs.cache
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.sourcelink.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\staticwebassets\msbuild.intern_prj.Microsoft.AspNetCore.StaticWebAssets.props
@@ -257,8 +259,6 @@ C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\staticweb
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\scopedcss\bundle\intern_prj.styles.css
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.csproj.Up2Date
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.dll
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\refint\intern_prj.dll
-C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.pdb
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\intern_prj.genruntimeconfig.cache
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\obj\Debug\net8.0\ref\intern_prj.dll

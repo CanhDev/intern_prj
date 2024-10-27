@@ -141,7 +141,7 @@ namespace intern_prj
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCors("AllowSpecificOrigin");
 

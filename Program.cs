@@ -127,19 +127,15 @@ namespace intern_prj
                 options.AddPolicy("AllowSpecificOrigin",
                     builder => builder.WithOrigins("http://localhost:4200")
                                       .AllowAnyMethod()
-                                      .AllowAnyHeader()
-                                      );
+                                      .AllowAnyHeader());
             });
             #endregion
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
 
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -150,7 +146,7 @@ namespace intern_prj
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(app.Environment.ContentRootPath, "resource")),
+                Path.Combine(app.Environment.WebRootPath, "resource")), 
                 RequestPath = "/resource"
             });
             app.UseCors("AllowSpecificOrigin");

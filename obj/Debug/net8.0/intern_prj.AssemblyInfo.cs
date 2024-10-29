@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("intern_prj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9be0570ec4c6cca45e04087ee1f833d3e09477ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ec4855ac38ba689cf4a8f165922d790172bb530")]
 [assembly: System.Reflection.AssemblyProductAttribute("intern_prj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("intern_prj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

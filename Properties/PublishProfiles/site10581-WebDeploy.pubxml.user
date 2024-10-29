@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACISY6n7//EKfxfQGad3AYgAAAAACAAAAAAAQZgAAAAEAACAAAAAoEzwqwqFzdaggGT5NFHZGEvpD2POhL2ooj1HFbYHGpgAAAAAOgAAAAAIAACAAAACHLLipr3jGgp8DBtcJb2UjwWhC26KVIkmdRYpMqsdRciAAAACaMVNBqe38W7mqaANfWIKpZvgjaqEFfmVjwtR1yaDqXEAAAABSNbLTUhbW79sGB1FCrI8U2U/ntgWHwBSGdTfTjIvbu//YyxU021Yl8o3Nd3pZIAt+Con5B6rDtN6rMywWMHod</EncryptedPassword>
+    <History>False|2024-10-29T01:30:15.8997135Z||;True|2024-10-29T08:29:11.4945076+07:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="decorDb">
+      <Value>Server=db9490.public.databaseasp.net%3b Database=db9490%3b User Id=db9490%3b Password=gB#4L-8y+2tY%3b Encrypt=False%3b MultipleActiveResultSets=True%3b </Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="intern_prj.Entities.DecorContext">
+      <Value>Server=db9490.public.databaseasp.net%3b Database=db9490%3b User Id=db9490%3b Password=gB#4L-8y+2tY%3b Encrypt=False%3b MultipleActiveResultSets=True%3b </Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

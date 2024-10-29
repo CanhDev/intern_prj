@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACISY6n7//EKfxfQGad3AYgAAAAACAAAAAAAQZgAAAAEAACAAAADWcSrkIT+WyOsp+LJyUNMcupKs7GjKt1u8D1sTtMA/igAAAAAOgAAAAAIAACAAAACsSm2arbKBQxp3i50kgKRRie7aLAFhP2CCFtTCGy9XgCAAAAAI+nW0UeWQkoSksXuiZOcue3IwKfsmHg9GJ4+enERhVEAAAADDKdjd9JJa+5NgJZETbHI0DVdz5TU/uJNLYOYTGF99HtC5zDaK+Jd4/Lrn+UcldnCwTYShjUqxvThpDwURetNg</EncryptedPassword>
+    <History>False|2024-10-29T02:13:51.0864154Z||;False|2024-10-29T09:11:08.8598046+07:00||;False|2024-10-29T09:10:10.3550917+07:00||;False|2024-10-29T09:09:27.8171124+07:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="decorDb">
+      <Value>Data Source=DESKTOP-TTSGQT3%3bInitial Catalog=Decor%3bUser ID=DecorMg%3bPassword=123456%3bEncrypt=True%3bTrust Server Certificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="intern_prj.Entities.DecorContext">
+      <Value>Data Source=DESKTOP-TTSGQT3%3bInitial Catalog=Decor%3bUser ID=DecorMg%3bPassword=123456%3bEncrypt=True%3bTrust Server Certificate=True</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

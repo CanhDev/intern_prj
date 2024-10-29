@@ -1,5 +1,6 @@
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Release\net8.0\appsettings.Development.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Release\net8.0\appsettings.json
+C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Release\net8.0\intern_prj.staticwebassets.runtime.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Release\net8.0\intern_prj.exe
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Release\net8.0\intern_prj.deps.json
 C:\Users\DELL\Workplace\2_project_inGithub\intern_prj\bin\Release\net8.0\intern_prj.runtimeconfig.json

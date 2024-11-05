@@ -62,15 +62,8 @@ namespace intern_prj.Repositories
 
         public async Task<List<Product>> GetProductsbyIds(List<int> ids)
         {
-            try
-            {
-                var productsEntityList = await _context.Products.Where(p => ids.Contains(p.Id)).ToListAsync();
-                return productsEntityList;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             var productsEntityList = await _context.Products.Where(p => ids.Contains(p.Id)).ToListAsync();
+             return productsEntityList;
         }
 
         public async Task<Product?> GetProductAsync(int? id)
@@ -80,66 +73,39 @@ namespace intern_prj.Repositories
                             .Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
             return product != null ? product : null;
         }
+
         public async Task<productReq?> AddProductAsync(Product productEntity)
         {
-            try
-            {
-                await _context.Products.AddAsync(productEntity);
-                await _context.SaveChangesAsync();
-                //
-                return _mapper.Map<productReq>(productEntity);
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            await _context.Products.AddAsync(productEntity);
+            await _context.SaveChangesAsync();
+            return _mapper.Map<productReq>(productEntity);
         }
+
         public async Task<productReq?> EditProductAsync(Product productEntity)
         {
-            try
-            {
-                _context.Products.Attach(productEntity);
-                _context.Entry(productEntity).State = EntityState.Modified;
+            _context.Products.Attach(productEntity);
+            _context.Entry(productEntity).State = EntityState.Modified;
 
-                await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-                return _mapper.Map<productReq?>(productEntity);
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            return _mapper.Map<productReq?>(productEntity);
         }
 
         public async Task EditProductsAsync(List<Product> productEntityList)
         {
-            try
+            _context.Products.AttachRange(productEntityList);
+            foreach (var product in productEntityList)
             {
-                _context.Products.AttachRange(productEntityList);
-                foreach (var product in productEntityList)
-                {
-                    _context.Entry(product).State = EntityState.Modified;
-                }
-
-                await _context.SaveChangesAsync();
+                _context.Entry(product).State = EntityState.Modified;
             }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            await _context.SaveChangesAsync();
         }
+
         public async Task<bool> DeleteProductAsync(Product productEntity)
         {
-            try
-            {
-                _context.Products.Remove(productEntity);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             _context.Products.Remove(productEntity);
+             await _context.SaveChangesAsync();
+             return true;
         }
 
         //sort by data & price

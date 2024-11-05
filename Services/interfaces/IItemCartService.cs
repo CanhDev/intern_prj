@@ -9,5 +9,6 @@ namespace intern_prj.Services.interfaces
         public Task<Api_response> AddItemCart(ItemCartRes itemCartRes);
         public Task<Api_response> DeleteItemCart(int itemCartId);
         public Task<Api_response> UpdateQuantity(ItemCartRes itemCartRes, int id);
+        public Task<Api_response> DeleteAllItemCart(int cartId);
     }
 }

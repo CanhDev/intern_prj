@@ -29,17 +29,10 @@ namespace intern_prj.Repositories
 
         public async Task<ApplicationUser?> CheckAccount(LoginRes model)
         {
-            try
-            {
-                var user = await _userManager.FindByEmailAsync(model.Email);
-                var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
-                if (user == null || !passwordValid) return null;
-                return user;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             var user = await _userManager.FindByEmailAsync(model.Email);
+             var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
+             if (user == null || !passwordValid) return null;
+             return user;
         }
 
         public async Task<bool> CreateAccount(ApplicationUser userAccount, string password)

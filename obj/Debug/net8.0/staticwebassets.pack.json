@@ -1,0 +1,809 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\0hm34p1e.uqg.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\0hm34p1e.uqg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\1kaenyrf.smj.png",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\1kaenyrf.smj.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\1l1v1ybj.gp2.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\1l1v1ybj.gp2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\1v5yc0qn.q3q.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\1v5yc0qn.q3q.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\3lzxl1ku.g01.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\3lzxl1ku.g01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\40jcgweu.ny4.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\40jcgweu.ny4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\4a3xc0ry.5nj.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\4a3xc0ry.5nj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\4tqbjole.vsi.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\4tqbjole.vsi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\52ozboga.hoz.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\52ozboga.hoz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\cth5gc0y.ph0.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\cth5gc0y.ph0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\cvqg1ebe.uxp.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\cvqg1ebe.uxp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\d15kyozi.j13.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\d15kyozi.j13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\dctic0dl.bgk.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\dctic0dl.bgk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\edabt3he.ccj.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\edabt3he.ccj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\eznjn1nq.lbc.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\eznjn1nq.lbc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\ft4ii3tz.3nd.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\ft4ii3tz.3nd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\glhwcntu.nsz.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\glhwcntu.nsz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\hxoex1ap.y3h.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\hxoex1ap.y3h.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\ibwqx3pi.2jj.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\ibwqx3pi.2jj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\j4cwbzyo.x41.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\j4cwbzyo.x41.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\jdf4jwpr.wle.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\jdf4jwpr.wle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\lssuw4ts.seh.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\lssuw4ts.seh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\mu2metur.xba.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\mu2metur.xba.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\nlm40sdi.rnf.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\nlm40sdi.rnf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\nnathv2p.peq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\nnathv2p.peq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\nskdyulk.wh0.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\nskdyulk.wh0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\q0cj1muz.wax.png",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\q0cj1muz.wax.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\qc1fio4i.lt1.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\qc1fio4i.lt1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\qwry2mom.1gx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\qwry2mom.1gx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\r4geelei.e2p.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\r4geelei.e2p.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\trohpseo.quv.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\trohpseo.quv.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\tsuju0os.pbi.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\tsuju0os.pbi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\uofn3vhe.c55.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\uofn3vhe.c55.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\v2hq11v4.eku.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\v2hq11v4.eku.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\vch3pibx.zg4.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\vch3pibx.zg4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\vsoiad1m.2yq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\vsoiad1m.2yq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\xblgjcsk.eoe.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\xblgjcsk.eoe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\xjdjawn0.riq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\xjdjawn0.riq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\zm5hz3kc.gmj.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\avatars\\zm5hz3kc.gmj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\default\\no_avatar.png",
+      "PackagePath": "staticwebassets\\resource\\images\\default\\no_avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\default\\no_image.png",
+      "PackagePath": "staticwebassets\\resource\\images\\default\\no_image.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\01sypwim.tqd.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\01sypwim.tqd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\0jeavg2j.1rr.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\0jeavg2j.1rr.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\0sotrzk4.fwm.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\0sotrzk4.fwm.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\1ddq05q4.hxw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\1ddq05q4.hxw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\1kb3iwms.kgf.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\1kb3iwms.kgf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\1ocn0qaw.3dw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\1ocn0qaw.3dw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\1rzawwyf.c5l.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\1rzawwyf.c5l.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\2ji4ktsn.tae.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\2ji4ktsn.tae.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\33pkoy4f.tot.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\33pkoy4f.tot.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\3j5durp2.mj5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\3j5durp2.mj5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\3tc2qguj.u52.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\3tc2qguj.u52.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\4agyiwi0.f4n.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\4agyiwi0.f4n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\4ke3biju.bkw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\4ke3biju.bkw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\4kgr4evc.i5v.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\4kgr4evc.i5v.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\4tzlfw1r.qs3.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\4tzlfw1r.qs3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\5csrvalc.r3f.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\5csrvalc.r3f.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\5ikkm2yj.g0d.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\5ikkm2yj.g0d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\5rswhjbb.hxt.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\5rswhjbb.hxt.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\5t3o225o.uwn.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\5t3o225o.uwn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\a2a5t3nw.w22.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\a2a5t3nw.w22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\a3m2ccta.3m1.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\a3m2ccta.3m1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ac5drfhj.oq2.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ac5drfhj.oq2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\acgns252.ugu.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\acgns252.ugu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\amkisapw.3pr.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\amkisapw.3pr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\b04p1sn3.uua.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\b04p1sn3.uua.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\b31tg30h.olw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\b31tg30h.olw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\bd4cvb30.fvw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\bd4cvb30.fvw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\bivz5etx.cse.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\bivz5etx.cse.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\bmabraum.nqm.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\bmabraum.nqm.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\c3byykbo.jhb.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\c3byykbo.jhb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\c4ucwtvb.vrs.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\c4ucwtvb.vrs.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\cb34ute1.2f3.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\cb34ute1.2f3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\cdcb05zl.lxr.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\cdcb05zl.lxr.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ddu40whs.52s.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ddu40whs.52s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\elsa0syv.akq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\elsa0syv.akq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\eztiq4rf.lsz.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\eztiq4rf.lsz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ezzw1hwl.1fo.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ezzw1hwl.1fo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\f4pmf3ug.ltk.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\f4pmf3ug.ltk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\fsedkth2.nd0.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\fsedkth2.nd0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\g5042cmm.e3u.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\g5042cmm.e3u.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ghg5vqcz.1b3.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ghg5vqcz.1b3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\gjhvyk4m.amq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\gjhvyk4m.amq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\gn3eyhjg.4vo.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\gn3eyhjg.4vo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\gq3xmn5o.ebx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\gq3xmn5o.ebx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\guqxuin0.zqd",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\guqxuin0.zqd"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\h2xs0wjm.2bq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\h2xs0wjm.2bq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hexee43v.pxz.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hexee43v.pxz.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hidb1qqh.gpv.jfif",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hidb1qqh.gpv.jfif"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hk2zw3xk.ke5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hk2zw3xk.ke5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hmafr20t.b0e.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hmafr20t.b0e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hqh3dpup.55u.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hqh3dpup.55u.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hv00yufg.53h.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hv00yufg.53h.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\hzb1bbbl.5wa.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\hzb1bbbl.5wa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ignmq2ll.zkx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ignmq2ll.zkx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\iurn1yzq.f0p.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\iurn1yzq.f0p.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\j3o4cdl2.5x3.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\j3o4cdl2.5x3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\jdnt4ssj.afl.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\jdnt4ssj.afl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\jj2tbbzj.g15.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\jj2tbbzj.g15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\jjhuiyf0.vkg.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\jjhuiyf0.vkg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\jw5mqt2e.exh.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\jw5mqt2e.exh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\jwxu33az.t44.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\jwxu33az.t44.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\jzkdzg3x.jeb.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\jzkdzg3x.jeb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\k3yxo4o5.eno.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\k3yxo4o5.eno.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\kcni24nu.zke.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\kcni24nu.zke.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\kuzanxkk.knw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\kuzanxkk.knw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\l3hjw5lz.4eh.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\l3hjw5lz.4eh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\laldows4.aid.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\laldows4.aid.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\lcwnc4u1.lrg.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\lcwnc4u1.lrg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ltdwvl45.u52.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ltdwvl45.u52.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\m2wdqhpm.nny.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\m2wdqhpm.nny.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\md41kd0e.kzr.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\md41kd0e.kzr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\mmkmebrb.gmu.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\mmkmebrb.gmu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\msz2cceo.mnp.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\msz2cceo.mnp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\n5qga042.dp1.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\n5qga042.dp1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\nhwmz0qs.x0k.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\nhwmz0qs.x0k.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\nis3ug0j.pcz.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\nis3ug0j.pcz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\nkub0ikj.foq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\nkub0ikj.foq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\o02j40mg.zx1.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\o02j40mg.zx1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\o2w4p0bs.1db.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\o2w4p0bs.1db.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\o4ecoywx.wbe.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\o4ecoywx.wbe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\o4sbpy1y.cvw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\o4sbpy1y.cvw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\okhymtuh.mti.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\okhymtuh.mti.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\olvbmccg.yx5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\olvbmccg.yx5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\opoobfyf.xdc.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\opoobfyf.xdc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\pht3ac3i.2nx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\pht3ac3i.2nx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\pkagtb5v.b1l.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\pkagtb5v.b1l.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\pkxvztar.wzt.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\pkxvztar.wzt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\poryqta5.aku.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\poryqta5.aku.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\pskrdekg.vn4.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\pskrdekg.vn4.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\pz0woeg0.var.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\pz0woeg0.var.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\pzfym30r.q5d.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\pzfym30r.q5d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\qekcipn5.zoa.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\qekcipn5.zoa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\qhwc1hk0.yg5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\qhwc1hk0.yg5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\qo4fkrdq.11f.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\qo4fkrdq.11f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\qo5055pn.psa.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\qo5055pn.psa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\qrnnqet0.0f0.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\qrnnqet0.0f0.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\qswvwisl.w43.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\qswvwisl.w43.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\rdlpbqpf.u5j.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\rdlpbqpf.u5j.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\rdnogs1b.pqt.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\rdnogs1b.pqt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\reooyiuf.lj5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\reooyiuf.lj5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\rfpp4gsd.vl0.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\rfpp4gsd.vl0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\rzzbcsq0.upv.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\rzzbcsq0.upv.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\s3jq1qun.4xi.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\s3jq1qun.4xi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\sekqpme0.tph.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\sekqpme0.tph.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\soja4bbt.4lx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\soja4bbt.4lx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\t55eh530.2uy.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\t55eh530.2uy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\thxzps0h.rgv.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\thxzps0h.rgv.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\tnyrwtdj.z4s.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\tnyrwtdj.z4s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\trksx5yq.ewz.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\trksx5yq.ewz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\tuqm1yha.mkl.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\tuqm1yha.mkl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\tvwif0bp.nga.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\tvwif0bp.nga.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\tw0ku20p.5ic.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\tw0ku20p.5ic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\txcsmfcb.am5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\txcsmfcb.am5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\u2fnjam2.uyu.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\u2fnjam2.uyu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\utvxfomh.lbe.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\utvxfomh.lbe.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\v0w3xdrk.hnu.png",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\v0w3xdrk.hnu.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\v3qmakyg.i3w.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\v3qmakyg.i3w.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vaqnb3kh.2bj.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vaqnb3kh.2bj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vbyogixt.w4t.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vbyogixt.w4t.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vgnsch3x.1bl.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vgnsch3x.1bl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vnyolu5d.buy.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vnyolu5d.buy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vq3os4t4.hqr.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vq3os4t4.hqr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vynhlqdj.wzr.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vynhlqdj.wzr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\vzv2m3wo.zgo.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\vzv2m3wo.zgo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\w5bbxdtj.amv.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\w5bbxdtj.amv.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\wog4vsia.lli.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\wog4vsia.lli.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\wrhhkli3.y4p.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\wrhhkli3.y4p.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\wy152aln.fmi.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\wy152aln.fmi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\xhfza2ve.2oq.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\xhfza2ve.2oq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\xhn3slc2.jrx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\xhn3slc2.jrx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\xm12lvne.3br.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\xm12lvne.3br.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\xp25lnal.vv5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\xp25lnal.vv5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ybbgeyfb.kzc.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ybbgeyfb.kzc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\yectrnez.ifc.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\yectrnez.ifc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\ygq3bwue.xdp.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\ygq3bwue.xdp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\yikv1yqk.xgz.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\yikv1yqk.xgz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\z1n2ksn3.qyw.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\z1n2ksn3.qyw.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\zcpupghi.k2c.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\zcpupghi.k2c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\zfa5oqqd.svr.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\zfa5oqqd.svr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\zleailnw.rig.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\products\\zleailnw.rig.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\1tn3egvc.euo.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\1tn3egvc.euo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\4a4fprph.jlb.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\4a4fprph.jlb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\dhsty5ii.5m1.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\dhsty5ii.5m1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\frjnvpgv.0r4.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\frjnvpgv.0r4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\h1vvlcbq.vsx.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\h1vvlcbq.vsx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\iasblwvc.lp4.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\iasblwvc.lp4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\kvz0ynpz.bjn.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\kvz0ynpz.bjn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\mbnbedpy.1c2.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\mbnbedpy.1c2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\mrfiwvmq.op3.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\mrfiwvmq.op3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\pqcoi3bt.1ex.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\pqcoi3bt.1ex.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\sl5s31kj.mjl.jpeg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\sl5s31kj.mjl.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\t0spa1uw.eum.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\t0spa1uw.eum.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\w3cajqnp.31n.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\w3cajqnp.31n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\whwk25ba.kpu.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\whwk25ba.kpu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\x5is5002.w0z.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\x5is5002.w0z.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\types\\zc3uaov1.ne5.jpg",
+      "PackagePath": "staticwebassets\\resource\\images\\types\\zc3uaov1.ne5.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.intern_prj.props",
+      "PackagePath": "build\\intern_prj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.intern_prj.props",
+      "PackagePath": "buildMultiTargeting\\intern_prj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.intern_prj.props",
+      "PackagePath": "buildTransitive\\intern_prj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.intern_prj.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

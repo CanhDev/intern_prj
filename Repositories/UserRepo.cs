@@ -22,34 +22,18 @@ namespace intern_prj.Repositories
         }
         public async Task<List<ApplicationUser>> GetUsers_Admin()
         {
-            try
-            {
                 var users = await _userManager.Users.ToListAsync();
                 return users;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public async Task<ApplicationUser?> GetUser_Admin(string id)
         {
-            try
-            {
                 var user = await _userManager.FindByIdAsync(id);
                 return user ?? null;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public async Task<ApplicationUser?> CreateUserAsync_Admin(ApplicationUser userEntity, string password)
         {
-            try
-            {
                 if(userEntity.Email == null)
                 {
                     return null;
@@ -73,30 +57,16 @@ namespace intern_prj.Repositories
                         return null;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public async Task<ApplicationUser?> UpdateUserAsync_Admin(ApplicationUser userEntity)
         {
-            try
-            {
                 var result = await _userManager.UpdateAsync(userEntity);
                 return result.Succeeded ? userEntity : null;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception (ex.Message);
-            }
         }
 
         public async Task<bool> DeleteUserAsync_Admin(string id)
         {
-            try
-            {
                 var userDelete = await _userManager.FindByIdAsync(id);
                 if (userDelete != null)
                 {
@@ -107,42 +77,22 @@ namespace intern_prj.Repositories
                 {
                     return false;
                 }
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public async Task<ApplicationUser?> GetUserAsync_Client(string id)
         {
-            try
-            {
                 var user = await _userManager.FindByIdAsync(id);
                 return user != null ? user : null;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
+
         public async Task<ApplicationUser?> UpdateUserAsync_Client(ApplicationUser userEntity)
         {
-            try
-            {
                 var updateResult = await _userManager.UpdateAsync(userEntity);
                 return updateResult.Succeeded ? userEntity : null;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public async Task<ApplicationUser?> ChangePassword_Client(string id, string oldPassword, string newPassword)
         {
-            try
-            {
                 var user = await _userManager.FindByIdAsync(id);
                 if(user != null)
                 {
@@ -153,11 +103,6 @@ namespace intern_prj.Repositories
                 {
                     return null;
                 }
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
     }
 }

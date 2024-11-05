@@ -20,31 +20,17 @@ namespace intern_prj.Repositories
         }
         public async Task<Cart?> GetCartAsync(string userid)
         {
-            try
-            {
-                var cart = await _context.Carts
-                    .Include(c => c.ItemCarts)
-                    .ThenInclude(ic => ic.Product)
-                    .ThenInclude(p => p.Images)
-                    .FirstOrDefaultAsync(c => c.UserId == userid);
-                return cart;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             var cart = await _context.Carts
+                 .Include(c => c.ItemCarts)
+                 .ThenInclude(ic => ic.Product)
+                 .ThenInclude(p => p.Images)
+                 .FirstOrDefaultAsync(c => c.UserId == userid);
+             return cart;
         }
         public async Task InitCart(Cart cartEntity)
         {
-            try
-            {
-                 _context.Carts.Add(cartEntity);
-                 await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+              _context.Carts.Add(cartEntity);
+              await _context.SaveChangesAsync();
         }
     }
 }

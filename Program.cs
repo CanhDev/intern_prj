@@ -6,6 +6,8 @@ using intern_prj.Repositories;
 using intern_prj.Repositories.interfaces;
 using intern_prj.Services;
 using intern_prj.Services.interfaces;
+using intern_prj.SystemIntegrations.VnPay.Services;
+using intern_prj.SystemIntegrations.VnPay.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -102,7 +104,7 @@ namespace intern_prj
             builder.Services.AddHttpContextAccessor(); // đăng ký IHttpContextAccessor
 
             //
-            #region scope
+            #region lifeTime
             builder.Services.AddScoped<JwtHelper>();
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddScoped<IProductRepo, ProductRepo>();
@@ -122,10 +124,11 @@ namespace intern_prj
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IDashboardRepo, DashboardRepo>();
             builder.Services.AddScoped<IDashBoardService, DashBoardService>();
+            builder.Services.AddSingleton<IVnPayService, VnPayService>();
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",
-                    builder => builder.WithOrigins("http://localhost:4200")
+                    builder => builder.WithOrigins("http://localhost:4200", "https://2c55-171-224-181-80.ngrok-free.app")
                                       .AllowAnyMethod()
                                       .AllowAnyHeader());
             });

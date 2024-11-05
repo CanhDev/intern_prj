@@ -32,7 +32,7 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=db9516.public.databaseasp.net; Database=db9516; User Id=db9516; Password=6Nf!Tn+8_5rA; Encrypt=False; MultipleActiveResultSets=True;");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-TTSGQT3;Initial Catalog=Decor;User ID=DecorMg;Password=123456;Encrypt=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

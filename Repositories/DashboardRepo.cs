@@ -20,8 +20,6 @@ namespace intern_prj.Repositories
         }
         public async Task<Api_response> GetRevenueStatistics(string? startDate, string? endDate)
         {
-            try
-            {
                 var query = from o in _context.Orders
                             join od in _context.OrderDetails on o.Id equals od.OrderId
                             join p in _context.Products on od.ProductId equals p.Id
@@ -71,46 +69,26 @@ namespace intern_prj.Repositories
                     success = true,
                     data = result
                 };
-            }
-            catch (Exception ex)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message
-                };
-            }
         }
 
 
         public async Task<Api_response> GetTopSelling(int count = 5)
         {
-            try
-            {
-                var products = await _context.Products.Include(p => p.Images)
-                                                    .OrderByDescending(p => p.SoldedCount).Take(count).ToListAsync();
-                if(products != null)
-                {
-                    return new Api_response
-                    {
-                        success = true,
-                        data = _mapper.Map<List<productReq>>(products)
-                    };
-                }
-                return new Api_response
-                {
-                    success = false,
-                    message = "Lỗi tải danh sách"
-                };
-            }
-            catch(Exception ex)
-            {
-                return new Api_response
-                {
-                    success = false,
-                    message = ex.Message
-                };
-            }
+              var products = await _context.Products.Include(p => p.Images)
+                                                  .OrderByDescending(p => p.SoldedCount).Take(count).ToListAsync();
+              if(products != null)
+              {
+                  return new Api_response
+                  {
+                      success = true,
+                      data = _mapper.Map<List<productReq>>(products)
+                  };
+              }
+              return new Api_response
+              {
+                  success = false,
+                  message = "Lỗi tải danh sách"
+              };
         }
     }
 }

@@ -78,6 +78,23 @@ namespace intern_prj.Controllers
                 });
             }
         }
+        [HttpDelete("DeleteAll/{cartId}")]
+        public async Task<IActionResult> DeleteAll(int cartId)
+        {
+            try
+            {
+                var res = await _itemCartService.DeleteAllItemCart(cartId);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                });
+            }
+        }
         [HttpPut("{id}")]
         public async Task<IActionResult> EditItem(ItemCartRes itemCartRes, int id)
         {

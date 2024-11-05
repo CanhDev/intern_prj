@@ -22,70 +22,36 @@ namespace intern_prj.Repositories
 
         public async Task<List<Category>> getCategories()
         {
-            try
-            {
-                var Categories = await _context.Categories.ToListAsync();
-                return Categories;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             var Categories = await _context.Categories.ToListAsync();
+             return Categories;
         }
 
         public async Task<Category?> getCategory(int id)
         {
-            try
-            {
-                var categoryQuery = await _context.Categories.FindAsync(id);
-                return categoryQuery != null ? categoryQuery : null;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             var categoryQuery = await _context.Categories.FindAsync(id);
+             return categoryQuery != null ? categoryQuery : null;
         }
+
         public async Task<CategoryReq?> addCategory(Category categoryEntity)
         {
-            try
-            {
-                _context.Categories.Add(categoryEntity);
-                await _context.SaveChangesAsync();
-                return _mapper.Map<CategoryReq>(categoryEntity);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
+             _context.Categories.Add(categoryEntity);
+             await _context.SaveChangesAsync();
+             return _mapper.Map<CategoryReq>(categoryEntity);
         }
 
         public async Task<bool> deleteCategory(Category categoryEntity)
         {
-            try
-            {
-                _context.Categories.Remove(categoryEntity);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             _context.Categories.Remove(categoryEntity);
+             await _context.SaveChangesAsync();
+             return true;
         }
+
         public async Task<CategoryReq?> editCategory(Category categoryEntity)
         {
-            try
-            {
-                _context.Categories.Attach(categoryEntity);
-                _context.Entry(categoryEntity).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-                return _mapper.Map<CategoryReq>(categoryEntity);
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             _context.Categories.Attach(categoryEntity);
+             _context.Entry(categoryEntity).State = EntityState.Modified;
+             await _context.SaveChangesAsync();
+             return _mapper.Map<CategoryReq>(categoryEntity);
         }
     }
 }

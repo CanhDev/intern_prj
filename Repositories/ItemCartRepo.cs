@@ -21,8 +21,6 @@ namespace intern_prj.Repositories
 
         public async Task<List<ItemCart>> GetItemCart_Cart(int cartId)
         {
-            try
-            {
                 var items = await _context.ItemCarts
                     .Where(i => i.CartId == cartId)
                     .Include(i => i.Product)               
@@ -37,41 +35,24 @@ namespace intern_prj.Repositories
                 }
                 await _context.SaveChangesAsync();
                 return items;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
         public Task<ItemCart?> GetItemCart_productId_cartId(int? productId, int? cartId)
         {
-            try
-            {
                 var itemCartEntity = _context.ItemCarts.FirstOrDefaultAsync(i => i.CartId == cartId
                                                                         && i.ProductId == productId);
                 return itemCartEntity;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
+
         public async Task<ItemCart?> GetItemCart(int id)
         {
-            try
-            {
                 var itemCartEntity =  await _context.ItemCarts
                     .Include(i => i.Product)
                     .ThenInclude(i => i.Images)
                     .FirstOrDefaultAsync(i => i.Id == id);
                 return itemCartEntity;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
+
         public async Task<ItemCart?> UpdateItemCart(ItemCart item)
         {
             _context.ItemCarts.Attach(item);
@@ -82,29 +63,24 @@ namespace intern_prj.Repositories
 
         public async Task<ItemCart> AddItemCart(ItemCart itemCartEntity)
         {
-            try
-            {
                 _context.ItemCarts.Add(itemCartEntity);
                 await _context.SaveChangesAsync();
                 return itemCartEntity;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
 
 
         public async Task DeleteItemCart(ItemCart itemCartEntity)
         {
-            try
-            {
                 _context.ItemCarts.Remove(itemCartEntity);
                 await _context.SaveChangesAsync();
-            }
-            catch(Exception ex)
+        }
+        public async Task DeleteAllItemCart(int cartId)
+        {
+            var items = await _context.ItemCarts.Where(i => i.CartId == cartId).AsNoTracking().ToListAsync();
+            if (items.Any())
             {
-                throw new Exception(ex.Message);
+                _context.ItemCarts.RemoveRange(items);
+                await _context.SaveChangesAsync();
             }
         }
     }

@@ -26,7 +26,7 @@ public partial class Product
 
     public string? Size { get; set; }
 
-    public int? SoldedCount { get; set; }
+    public int? SoldedCount { get; set; } = 0;
     public string? Manufacturer { get; set; }
 
     public virtual Category? Category { get; set; }

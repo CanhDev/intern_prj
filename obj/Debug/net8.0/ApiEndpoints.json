@@ -258,6 +258,22 @@
   },
   {
     "ContainingType": "intern_prj.Controllers.ItemCartController",
+    "Method": "DeleteAll",
+    "RelativePath": "api/ItemCart/DeleteAll/{cartId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.Controllers.ItemCartController",
     "Method": "GetItemsCartByCartId",
     "RelativePath": "api/ItemCart/GetByCart/{id}",
     "HttpMethod": "GET",
@@ -843,6 +859,37 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.SystemIntegrations.VnPay.VnPayController",
+    "Method": "createUrl",
+    "RelativePath": "api/VnPay/VnPay_checkout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "amount",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "intern_prj.SystemIntegrations.VnPay.VnPayController",
+    "Method": "PaymentExecute",
+    "RelativePath": "api/VnPay/vnpay_return",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

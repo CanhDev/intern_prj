@@ -184,5 +184,26 @@ namespace intern_prj.Services
                 };
             }
         }
+
+        public async Task<Api_response> DeleteAllItemCart(int cartId)
+        {
+            try
+            {
+                await _itemCartRepo.DeleteAllItemCart(cartId);
+                return new Api_response
+                {
+                    success = true,
+                    data = null
+                };
+            }
+            catch(Exception ex)
+            {
+                return new Api_response
+                {
+                    success = false,
+                    message = ex.Message,
+                };
+            }
+        }
     }
 }

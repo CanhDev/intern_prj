@@ -14,5 +14,6 @@ namespace intern_prj.Repositories.interfaces
         public Task<ItemCart?> UpdateItemCart(ItemCart item);
         public Task<ItemCart> AddItemCart(ItemCart itemCartEntity);
         public Task DeleteItemCart(ItemCart itemCartEntity);
+        public Task DeleteAllItemCart(int cartId);
     }
 }

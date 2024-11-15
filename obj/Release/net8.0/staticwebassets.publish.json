@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LIGm74y+P8klc1nZ8StIPXFoAi4rbMMSMbfbBjGKNFo=",
+  "Hash": "TXfen7dHWimQ1d6UyEXbTbDBI59IF+PKaktQgJSrDt0=",
   "Source": "intern_prj",
   "BasePath": "_content/intern_prj",
   "Mode": "Default",
@@ -416,6 +416,25 @@
       "OriginalItemSpec": "wwwroot\\resource\\images\\avatars\\jdf4jwpr.wle.jpg"
     },
     {
+      "Identity": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\l2bsneax.jcl.jpg",
+      "SourceId": "intern_prj",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\",
+      "BasePath": "_content/intern_prj",
+      "RelativePath": "resource/images/avatars/l2bsneax.jcl.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\images\\avatars\\l2bsneax.jcl.jpg"
+    },
+    {
       "Identity": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\lssuw4ts.seh.jpg",
       "SourceId": "intern_prj",
       "SourceType": "Discovered",
@@ -623,6 +642,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\resource\\images\\avatars\\tsuju0os.pbi.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\uofn3vhe.c55.jpg",
+      "SourceId": "intern_prj",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\",
+      "BasePath": "_content/intern_prj",
+      "RelativePath": "resource/images/avatars/uofn3vhe.c55.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\images\\avatars\\uofn3vhe.c55.jpg"
     },
     {
       "Identity": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\avatars\\v2hq11v4.eku.jpg",
@@ -2960,6 +2998,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\resource\\images\\products\\utvxfomh.lbe.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\uwdhzmyf.s4p.jpg",
+      "SourceId": "intern_prj",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\",
+      "BasePath": "_content/intern_prj",
+      "RelativePath": "resource/images/products/uwdhzmyf.s4p.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resource\\images\\products\\uwdhzmyf.s4p.jpg"
     },
     {
       "Identity": "C:\\Users\\DELL\\Workplace\\2_project_inGithub\\intern_prj\\wwwroot\\resource\\images\\products\\v0w3xdrk.hnu.png",

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("intern_prj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4281c608bcc292f8f3bf7205a58e2955bec7e417")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c05c53256173a4018559696854c6f0e0e1acce66")]
 [assembly: System.Reflection.AssemblyProductAttribute("intern_prj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("intern_prj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

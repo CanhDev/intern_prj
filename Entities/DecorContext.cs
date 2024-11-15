@@ -7,10 +7,12 @@ namespace intern_prj.Entities;
 
 public partial class DecorContext : IdentityDbContext<ApplicationUser>
 {
+    private readonly IConfiguration _configuration;
 
-    public DecorContext(DbContextOptions<DecorContext> options)
+    public DecorContext(DbContextOptions<DecorContext> options, IConfiguration configuration)
         : base(options)
     {
+        _configuration = configuration;
     }
 
     public virtual DbSet<RefreshTokenEntity> RefreshTokenEntities { get; set; }
@@ -32,7 +34,7 @@ public partial class DecorContext : IdentityDbContext<ApplicationUser>
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-TTSGQT3;Initial Catalog=Decor;User ID=DecorMg;Password=123456;Encrypt=True;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer(_configuration.GetConnectionString("decorDb"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
